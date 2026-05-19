@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>刘芯 / Xin Liu — PhD Candidate</title>
+<style>
+/* ===== Reset & Base ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root {
+  --bg: #fafaf8;
+  --card: #ffffff;
+  --border: #e8e6e1;
+  --text: #1a1a1a;
+  --text-muted: #5f5f5f;
+  --text-light: #999;
+  --accent: #3b6cf4;
+  --accent-dim: #eef2ff;
+  --radius: 8px;
+  --max-w: 720px;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== Layout ===== */
+header {
+  padding: 80px 24px 48px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+main {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+section { margin-bottom: 56px; }
+
+/* ===== Typography ===== */
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.hero-sub {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.hero-tag {
+  font-size: 0.88rem;
+  color: var(--accent);
+  margin-top: 14px;
+  display: inline-block;
+  background: var(--accent-dim);
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.section-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-light);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px 28px 22px;
+  margin-bottom: 14px;
+}
+
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.card-date {
+  font-size: 0.84rem;
+  color: var(--text-light);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.card-sub {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.card-desc {
+  font-size: 0.93rem;
+  color: var(--text);
+}
+
+/* ===== Lists ===== */
+.dot-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.dot-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.94rem;
+}
+
+.dot-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.5;
+}
+
+/* ===== Tags ===== */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tag {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  background: #f3f2ef;
+  padding: 2px 10px;
+  border-radius: 4px;
+}
+
+/* ===== Avatar ===== */
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #c7d2fe 0%, #93a5f7 100%);
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 500;
+  user-select: none;
+}
+
+/* ===== Lang toggle ===== */
+.lang-bar {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  z-index: 100;
+  display: flex;
+  gap: 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.lang-btn {
+  border: none;
+  background: none;
+  padding: 6px 15px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: var(--text-light);
+  font-family: inherit;
+  transition: all 0.15s;
+}
+
+.lang-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.lang-btn:hover:not(.active) {
+  color: var(--text);
+  background: #f3f2ef;
+}
+
+/* ===== Contact ===== */
+.contact-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  align-items: center;
+}
+
+.contact-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+  flex-shrink: 0;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 32px 24px;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  border-top: 1px solid var(--border);
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  header { padding: 60px 20px 36px; }
+  main { padding: 32px 16px 60px; }
+  h1 { font-size: 1.6rem; }
+  section { margin-bottom: 40px; }
+  .card { padding: 20px 18px 16px; }
+  .lang-bar { top: 10px; right: 10px; }
+  .contact-row { gap: 14px; }
+}
+
+@media print {
+  .lang-bar { display: none; }
+  body { font-size: 13px; }
+  .card { break-inside: avoid; border: none; padding: 12px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- Language Toggle -->
+<nav class="lang-bar" aria-label="Language">
+  <button class="lang-btn active" data-lang="zh" aria-pressed="true">中</button>
+  <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+</nav>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="avatar" aria-hidden="true">刘</div>
+  <h1 data-i18n>刘芯<span data-i18n-en style="display:none">Xin Liu</span></h1>
+  <p class="hero-sub" data-i18n>浙江大学 · 体育人文社会学博士研究生<span data-i18n-en style="display:none">PhD Candidate in Sports Humanities & Sociology, Zhejiang University</span></p>
+  <p class="hero-sub" data-i18n>体卫融合 · 体育产业政策 · 健康中国<span data-i18n-en style="display:none">Sports-Health Integration · Sports Policy · Healthy China</span></p>
+  <span class="hero-tag" data-i18n>研究方向：体卫融合与健康中国<span data-i18n-en style="display:none">Research: Sports-Health Integration & Healthy China</span></span>
+</header>
+
+<!-- ===== MAIN ===== -->
+<main>
+
+<!-- About -->
+<section>
+  <div class="section-label" data-i18n>简介<span data-i18n-en style="display:none">About</span></div>
+  <div class="card">
+    <p class="card-desc" data-i18n>
+      刘芯，广东深圳人。目前于浙江大学教育学院攻读体育人文社会学博士学位，研究方向为体卫融合与健康中国。此前于清华大学五道口金融学院体育金融研究中心任中级研究专员，拥有苏黎世大学经济学荣誉硕士学位与华南理工大学金融学学士学位。研究关注体育产业政策、体育消费行为、体卫融合机制等议题。
+      <span data-i18n-en style="display:none">Xin Liu is a PhD candidate in Sports Humanities and Sociology at Zhejiang University's College of Education, researching sports-health integration and Healthy China. Previously a Research Specialist at the Tsinghua PBCSF Sports Finance Research Center, she holds an honors master's degree in Economics from the University of Zurich and a bachelor's in Finance from South China University of Technology. Her research spans sports industry policy, sports consumption behavior, and sports-health integration mechanisms.</span>
+    </p>
+  </div>
+</section>
+
+<!-- Education -->
+<section>
+  <div class="section-label" data-i18n>教育背景<span data-i18n-en style="display:none">Education</span></div>
+
+  <div class="card">
+    <div class="card-row">
+      <h2 data-i18n>浙江大学<span data-i18n-en style="display:none">Zhejiang University</span></h2>
+      <span class="card-date">2024.09 – <span data-i18n>至今<span data-i18n-en style="display:none">Present</span></span></span>
+    </div>
+    <div class="card-sub" data-i18n>体育人文社会学 · 博士研究生<span data-i18n-en style="display:none">Sports Humanities & Sociology · PhD Candidate</span></div>
+    <div class="tags">
+      <span class="tag" data-i18n>体卫融合<span data-i18n-en style="display:none">Sports-Health Integration</span></span>
+      <span class="tag" data-i18n>健康中国<span data-i18n-en style="display:none">Healthy China</span></span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-row">
+      <h2 data-i18n>苏黎世大学<span data-i18n-en style="display:none">University of Zurich</span></h2>
+      <span class="card-date">2016.02 – 2018.10</span>
+    </div>
+    <div class="card-sub" data-i18n>经济学 · 荣誉硕士学位<span data-i18n-en style="display:none">Economics · Master of Arts (Honors)</span></div>
+    <p class="card-desc" data-i18n>辅修数据科学，毕业论文获得满分。实习于中国综合开发研究院、弘金地体育公司。<span data-i18n-en style="display:none">Minor in Data Science; master's thesis received full marks. Internships at China Development Institute and Hongjindi Sports.</span></p>
+  </div>
+
+  <div class="card">
+    <div class="card-row">
+      <h2 data-i18n>华南理工大学<span data-i18n-en style="display:none">South China University of Technology</span></h2>
+      <span class="card-date">2011.09 – 2015.07</span>
+    </div>
+    <div class="card-sub" data-i18n>金融学 · 学士学位<span data-i18n-en style="display:none">Finance · Bachelor of Economics</span></div>
+    <p class="card-desc" data-i18n>交换项目至国立高雄大学；实习于中国欧盟商会、农村商业银行。<span data-i18n-en style="display:none">Exchange program at National University of Kaohsiung; internships at EU Chamber of Commerce in China and Rural Commercial Bank.</span></p>
+  </div>
+</section>
+
+<!-- Work Experience -->
+<section>
+  <div class="section-label" data-i18n>工作经历<span data-i18n-en style="display:none">Work Experience</span></div>
+
+  <div class="card">
+    <div class="card-row">
+      <h2 data-i18n>清华大学五道口金融学院<span data-i18n-en style="display:none">Tsinghua PBCSF</span></h2>
+      <span class="card-date">2019.04 – 2024.08</span>
+    </div>
+    <div class="card-sub" data-i18n>体育金融研究中心 · 中级研究专员<span data-i18n-en style="display:none">Sports Finance Research Center · Research Specialist</span></div>
+    <ul class="dot-list">
+      <li data-i18n>组织开展全国体育公园调研，撰写政策解读《推进体育公园建设 满足全民健身需求》并刊登于国家发展改革委官方网站<span data-i18n-en style="display:none">Led national sports park research; authored policy brief &ldquo;Promoting Sports Park Construction to Meet National Fitness Needs,&rdquo; published on the NDRC official website</span></li>
+      <li data-i18n>参与《体育科技浪潮》《体育消费：发展趋势与政策导向》等体育产业书籍编写工作<span data-i18n-en style="display:none">Contributed to books including &ldquo;The Wave of Sports Technology&rdquo; and &ldquo;Sports Consumption: Trends and Policy Directions&rdquo;</span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-row">
+      <h2 data-i18n>二十一点体育发展有限公司<span data-i18n-en style="display:none">21-Point Sports Development Co., Ltd.</span></h2>
+      <span class="card-date">2023.01 – 2024.03</span>
+    </div>
+    <div class="card-sub" data-i18n>政策顾问<span data-i18n-en style="display:none">Policy Consultant</span></div>
+    <ul class="dot-list">
+      <li data-i18n>与中国篮球协会合作开展《中国三人篮球可持续发展战略研究》，撰写调研报告并报送体育总局<span data-i18n-en style="display:none">Collaborated with the Chinese Basketball Association on &ldquo;Sustainable Development Strategy for 3×3 Basketball in China&rdquo;; authored reports submitted to the General Administration of Sport</span></li>
+      <li data-i18n>为中国三人篮球国家队及俱乐部提供政策和产业研究支持<span data-i18n-en style="display:none">Provided policy and industry research support for China's national 3×3 basketball team and clubs</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Research & Publications -->
+<section>
+  <div class="section-label" data-i18n>研究成果与报告<span data-i18n-en style="display:none">Research & Publications</span></div>
+
+  <div class="card">
+    <h3 data-i18n>学术论文<span data-i18n-en style="display:none">Journal Articles</span></h3>
+    <ul class="dot-list">
+      <li data-i18n>《新冠疫情对我国体育风险投资的影响及应对策略》，北京体育大学学报<span data-i18n-en style="display:none">&ldquo;Impact of COVID-19 on Sports Venture Capital in China and Coping Strategies,&rdquo; Journal of Beijing Sport University</span></li>
+      <li data-i18n>《我国乡村体育服务业的发展方向与金融支持研究》，入选全国青年理论研讨会<span data-i18n-en style="display:none">&ldquo;Development Direction and Financial Support for China's Rural Sports Service Industry,&rdquo; selected for National Youth Theory Symposium</span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 data-i18n>研究报告<span data-i18n-en style="display:none">Research Reports</span></h3>
+    <ul class="dot-list">
+      <li data-i18n>《2021全民健身体育公园研究报告》，中国体博会发布<span data-i18n-en style="display:none">&ldquo;2021 National Fitness Sports Park Research Report,&rdquo; released at China Sports Expo</span></li>
+      <li data-i18n>《2022年大众健身行为与消费研究报告》<span data-i18n-en style="display:none">&ldquo;2022 Mass Fitness Behavior and Consumption Research Report&rdquo;</span></li>
+      <li data-i18n>《中国城市体育消费报告》，中国体育文化和体育旅游博览会发布<span data-i18n-en style="display:none">&ldquo;China Urban Sports Consumption Report,&rdquo; released at China Sports Culture &amp; Sports Tourism Expo</span></li>
+      <li data-i18n>《体育产业与金融政策扶持情况调研报告》，人民网等媒体发布<span data-i18n-en style="display:none">&ldquo;Survey Report on Sports Industry and Financial Policy Support,&rdquo; published via People's Daily Online</span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 data-i18n>书籍与教材<span data-i18n-en style="display:none">Books &amp; Textbooks</span></h3>
+    <ul class="dot-list">
+      <li data-i18n>参与仇军老师《体育社会学》教材编写<span data-i18n-en style="display:none">Contributed to &ldquo;Sports Sociology&rdquo; textbook (ed. Prof. Qiu Jun)</span></li>
+      <li data-i18n>参与《体育科技浪潮》书籍编写<span data-i18n-en style="display:none">Contributed to &ldquo;The Wave of Sports Technology&rdquo;</span></li>
+      <li data-i18n>参与江小涓老师《体育消费：发展趋势与政策导向》章节写作<span data-i18n-en style="display:none">Contributed a chapter to &ldquo;Sports Consumption: Trends and Policy Directions&rdquo; (ed. Prof. Jiang Xiaojuan)</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Media & Training -->
+<section>
+  <div class="section-label" data-i18n>媒体与培训<span data-i18n-en style="display:none">Media &amp; Training</span></div>
+  <div class="card">
+    <ul class="dot-list">
+      <li data-i18n>学术嘉宾，多次参与《中国之声·新闻有观点》节目录制，主题涵盖水上运动、轻健身、乡村篮球等<span data-i18n-en style="display:none">Academic guest on China National Radio's &ldquo;News with Views,&rdquo; covering topics from water sports to grassroots basketball</span></li>
+      <li data-i18n>报告人，于中国体博会、中国体育文化和体育旅游博览会等全国性行业大会发布研究成果<span data-i18n-en style="display:none">Presenter at national industry conferences including China Sports Expo and China Sports Culture &amp; Tourism Expo</span></li>
+      <li data-i18n>授课教师，参与青海省退役运动员体育产业培训，设计并主讲《体育产业人才培养课程》<span data-i18n-en style="display:none">Instructor for Qinghai Province retired athletes training program; designed and taught &ldquo;Sports Industry Talent Development&rdquo; course</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Contact -->
+<section>
+  <div class="section-label" data-i18n>联系方式<span data-i18n-en style="display:none">Contact</span></div>
+  <div class="card">
+    <div class="contact-row">
+      <span><span class="contact-dot" style="background:#3b6cf4"></span>540737233@qq.com</span>
+      <span data-i18n><span class="contact-dot" style="background:#10b981"></span>广东 · 深圳<span data-i18n-en style="display:none"><span class="contact-dot" style="background:#10b981"></span>Shenzhen, Guangdong</span></span>
+      <span><span class="contact-dot" style="background:#f59e0b"></span>IELTS 7.5</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span>© 2025 Xin Liu</span>
+</footer>
+
+<script>
+(function() {
+  const btns = document.querySelectorAll('.lang-btn');
+
+  function normalize(str) {
+    return str.replace(/\s+/g, ' ').trim();
+  }
+
+  function i18nElement(el, lang) {
+    // For elements with data-i18n, the default (visible) content is Chinese.
+    // The data-i18n-en span (if present) contains the English version.
+    // Strategy: toggle visibility of content inside this element.
+    if (lang === 'zh') {
+      // Show direct text, hide en spans
+      el.childNodes.forEach(function(node) {
+        if (node.nodeType === Node.TEXT_NODE) {
+          node.textContent = node.textContent; // restore? No, we need original.
+        }
+      });
+      // Show all nodes except i18n-en spans
+      showHideChildren(el, 'zh');
+    } else {
+      showHideChildren(el, 'en');
+    }
+  }
+
+  function showHideChildren(el, lang) {
+    // Walk direct children
+    for (var i = 0; i < el.childNodes.length; i++) {
+      var child = el.childNodes[i];
+      if (child.nodeType === Node.TEXT_NODE) {
+        // Text nodes: hide in EN mode if parent has data-i18n-en children
+        if (lang === 'en') {
+          // Check if this parent has any data-i18n-en child
+          var hasEnChild = false;
+          for (var j = 0; j < el.childNodes.length; j++) {
+            var c = el.childNodes[j];
+            if (c.nodeType === Node.ELEMENT_NODE) {
+              if (c.getAttribute && c.getAttribute('data-i18n-en') !== null) {
+                hasEnChild = true;
+                break;
+              }
+              if (c.querySelector && c.querySelector('[data-i18n-en]')) {
+                hasEnChild = true;
+                break;
+              }
+            }
+          }
+          child._originalText = child._originalText || child.textContent;
+          child.textContent = hasEnChild ? '' : '';
+        } else {
+          if (child._originalText !== undefined) {
+            child.textContent = child._originalText;
+          }
+        }
+      } else if (child.nodeType === Node.ELEMENT_NODE) {
+        var isZhSpan = child.hasAttribute && child.hasAttribute('data-i18n') && !child.hasAttribute('data-i18n-en');
+        var isEnSpan = child.hasAttribute && child.hasAttribute('data-i18n-en');
+        var isEnOnly = isEnSpan && (child.tagName === 'SPAN' || child.getAttribute('data-i18n-en') !== null);
+
+        if (isEnSpan && child.style) {
+          child.style.display = (lang === 'en') ? '' : 'none';
+        }
+
+        // Recurse
+        if (child.childNodes && child.childNodes.length > 0) {
+          showHideChildren(child, lang);
+        }
+      }
+    }
+  }
+
+  // Simpler approach: the HTML has Chinese text directly + <span data-i18n-en style="display:none">EN version</span>
+  // Just toggle display of data-i18n-en spans and hide/show the direct text
+  function simpleToggle(lang) {
+    var all = document.querySelectorAll('[data-i18n]');
+    all.forEach(function(el) {
+      if (el === el.parentElement && el.parentElement.querySelector('[data-i18n]') === el) {
+        // Skip if parent handled
+      }
+      var enSpans = el.querySelectorAll(':scope > [data-i18n-en]');
+      if (enSpans.length === 0) return;
+
+      if (lang === 'en') {
+        // Hide direct text nodes of this element
+        el.childNodes.forEach(function(node) {
+          if (node.nodeType === Node.TEXT_NODE) {
+            if (node._orig === undefined) node._orig = node.textContent;
+            node.textContent = '';
+          }
+        });
+        // Show en spans
+        enSpans.forEach(function(s) { s.style.display = ''; });
+      } else {
+        // Restore text nodes
+        el.childNodes.forEach(function(node) {
+          if (node.nodeType === Node.TEXT_NODE && node._orig !== undefined) {
+            node.textContent = node._orig;
+          }
+        });
+        // Hide en spans
+        enSpans.forEach(function(s) { s.style.display = 'none'; });
+      }
+    });
+  }
+
+  function setLang(lang, activeBtn) {
+    btns.forEach(function(b) {
+      b.classList.remove('active');
+      b.setAttribute('aria-pressed', 'false');
+    });
+    activeBtn.classList.add('active');
+    activeBtn.setAttribute('aria-pressed', 'true');
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+
+    simpleToggle(lang);
+    localStorage.setItem('site-lang', lang);
+  }
+
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      setLang(this.getAttribute('data-lang'), this);
+    });
+  });
+
+  // Restore saved language
+  var saved = localStorage.getItem('site-lang');
+  if (saved === 'en') {
+    var enBtn = document.querySelector('[data-lang="en"]');
+    if (enBtn) setLang('en', enBtn);
+  }
+})();
+</script>
+
+</body>
+</html>
