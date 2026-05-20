@@ -1,0 +1,32 @@
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tagBtn {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  background: #f3f2ef;
+  padding: 2px 10px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+}
+
+.tagBtn:hover {
+  background: var(--accent-dim);
+  color: var(--accent);
+}
+
+.tagBtnActive {
+  background: var(--accent);
+  color: #fff;
+}
+
+.tagBtnActive:hover {
+  background: var(--accent);
+  color: #fff;
+}
