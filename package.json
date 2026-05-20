@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "velite build && next dev",
-    "build": "velite build && tsx scripts/generate-rss.ts && next build",
+    "build": "velite build && tsx scripts/generate-rss.ts && next build && rm -rf docs && mv out docs",
     "start": "next start",
     "lint": "eslint"
   },
