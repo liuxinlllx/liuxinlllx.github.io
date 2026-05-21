@@ -11,9 +11,9 @@ export const en: Dictionary = {
     subtitle1:
       "PhD Candidate in Sports Humanities & Sociology, Zhejiang University",
     subtitle2:
-      "Sports-Health Integration · Sports Policy · Healthy China",
+      "Exercise is Medicine · Sports Policy · Healthy China",
     researchTag:
-      "Research: Sports-Health Integration & Healthy China",
+      "Research: Exercise is Medicine & Healthy China",
   },
   sections: {
     about: "About",

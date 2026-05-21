@@ -9,7 +9,7 @@ import type {
 
 export const aboutText: BilingualText = {
   zh: "刘芯，广东深圳人。目前于浙江大学教育学院攻读体育人文社会学博士学位，研究方向为体卫融合与健康中国。此前于清华大学五道口金融学院体育金融研究中心任中级研究专员，拥有苏黎世大学经济学荣誉硕士学位与华南理工大学金融学学士学位。研究关注体育产业政策、体育消费行为、体卫融合机制等议题。",
-  en: "Xin Liu is a PhD candidate in Sports Humanities and Sociology at Zhejiang University's College of Education, researching sports-health integration and Healthy China. Previously a Research Specialist at the Tsinghua PBCSF Sports Finance Research Center, she holds an honors master's degree in Economics from the University of Zurich and a bachelor's in Finance from South China University of Technology. Her research spans sports industry policy, sports consumption behavior, and sports-health integration mechanisms.",
+  en: "Xin Liu is a PhD candidate in Sports Humanities and Sociology at Zhejiang University's College of Education, researching Exercise is Medicine and Healthy China. Previously a Research Specialist at the Tsinghua PBCSF Sports Finance Research Center, she holds an honors master's degree in Economics from the University of Zurich and a bachelor's in Finance from South China University of Technology. Her research spans sports industry policy, sports consumption behavior, and Exercise is Medicine mechanisms.",
 };
 
 export const educationItems: EducationItem[] = [
@@ -22,7 +22,7 @@ export const educationItems: EducationItem[] = [
       en: "Sports Humanities & Sociology · PhD Candidate",
     },
     tags: [
-      { zh: "体卫融合", en: "Sports-Health Integration" },
+      { zh: "体卫融合", en: "Exercise is Medicine" },
       { zh: "健康中国", en: "Healthy China" },
     ],
   },
