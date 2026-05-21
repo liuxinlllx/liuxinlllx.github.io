@@ -175,17 +175,17 @@ export const mediaItems: MediaItem[] = [
 export const contactItems: ContactItem[] = [
   {
     label: { zh: "邮箱", en: "Email" },
-    value: "540737233@qq.com",
+    value: "champagne_7@163.com",
     dotColor: "#3b6cf4",
   },
   {
-    label: { zh: "广东 · 深圳", en: "Shenzhen, Guangdong" },
-    value: "广东 · 深圳",
+    label: { zh: "浙江·杭州", en: "Hangzhou, Zhejiang" },
+    value: "浙江·杭州",
     dotColor: "#10b981",
   },
   {
-    label: { zh: "雅思", en: "IELTS" },
-    value: "IELTS 7.5",
+    label: { zh: "LinkedIn", en: "LinkedIn" },
+    value: "www.linkedin.com/in/xin-liu-8685013a8",
     dotColor: "#f59e0b",
   },
 ];
