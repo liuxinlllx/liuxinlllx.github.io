@@ -1,0 +1,3 @@
+:HL["/_next/static/chunks/0866afwyja6u_.css","style"]
+:HL["/_next/static/chunks/0aa0i54z9b61q.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"podcast","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"rock-climbing-gym","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"pG5ycII2bleYZGkUEaa5O"}
