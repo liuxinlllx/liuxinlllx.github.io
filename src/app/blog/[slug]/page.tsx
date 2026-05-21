@@ -1,10 +1,8 @@
 import { blog } from "@/.velite";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { mdxComponents } from "@/mdx/components";
-import { formatDate } from "@/lib/utils";
-import { TagBadge } from "@/components/shared/TagBadge";
+import { PostContent } from "./PostContent";
 import type { Metadata } from "next";
 import styles from "./page.module.css";
 
@@ -45,24 +43,7 @@ export default async function BlogPostPage({
   return (
     <div className={styles.container}>
       <article className={styles.article}>
-        <Link href="/blog" className={styles.back}>
-          ← 返回博客列表
-        </Link>
-
-        <header className={styles.header}>
-          <h1 className={styles.title}>{post.title}</h1>
-          <div className={styles.tagRow}>
-            {post.tags.map((tag) => (
-              <TagBadge key={tag} label={tag} />
-            ))}
-          </div>
-          <div className={styles.meta}>
-            <time>{formatDate(post.date)}</time>
-            <span>·</span>
-            <span>阅读时间 {post.readingTimeMin} 分钟</span>
-          </div>
-        </header>
-
+        <PostContent post={post} />
         <div className={styles.content}>
           <MDXRemote source={post.body} components={mdxComponents} />
         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useT } from "@/lib/i18n/context";
+import { useLanguage } from "@/lib/i18n/context";
 import { formatDate } from "@/lib/utils";
 import { TagBadge } from "@/components/shared/TagBadge";
 import type { PodcastEpisode } from "@/lib/types";
@@ -12,7 +12,7 @@ interface PodcastCardProps {
 }
 
 export function PodcastCard({ episode }: PodcastCardProps) {
-  const t = useT();
+  const { t, lang } = useLanguage();
 
   return (
     <Link href={`/podcast/${episode.slug}`} className={styles.card}>
@@ -29,7 +29,7 @@ export function PodcastCard({ episode }: PodcastCardProps) {
       </div>
       <p className={styles.excerpt}>{episode.excerpt}</p>
       <div className={styles.meta}>
-        <time>{formatDate(episode.date)}</time>
+        <time>{formatDate(episode.date, lang)}</time>
         <span>·</span>
         <span>
           {t.podcast.duration}: {episode.duration}

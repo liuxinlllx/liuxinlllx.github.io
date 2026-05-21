@@ -1,31 +1,134 @@
 1:"$Sreact.fragment"
-2:I[22016,["/_next/static/chunks/0hdhjewkla9s-.js","/_next/static/chunks/0d3shmwh5_nmn.js"],""]
-25:I[97367,["/_next/static/chunks/0hdhjewkla9s-.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
-26:"$Sreact.suspense"
+2:I[10260,["/_next/static/chunks/016y26_q~75c4.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0pnn8w6zsd3um.js"],"PostContent"]
+23:I[97367,["/_next/static/chunks/016y26_q~75c4.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+24:"$Sreact.suspense"
 :HL["/_next/static/chunks/10xnt37.porm9.css","style"]
-0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"page-module__dgei_G__container","children":["$","article",null,{"className":"page-module__dgei_G__article","children":[["$","$L2",null,{"href":"/blog","className":"page-module__dgei_G__back","children":"← 返回博客列表"}],["$","header",null,{"className":"page-module__dgei_G__header","children":[["$","h1",null,{"className":"page-module__dgei_G__title","children":"科研小白一天学会做个人学术网站"}],["$","div",null,{"className":"page-module__dgei_G__tagRow","children":[["$","span","学习笔记",{"style":{"fontSize":"0.78rem","color":"var(--text-muted)","background":"#f3f2ef","padding":"2px 10px","borderRadius":"4px"},"children":"学习笔记"}],["$","span","Web开发",{"style":{"fontSize":"0.78rem","color":"var(--text-muted)","background":"#f3f2ef","padding":"2px 10px","borderRadius":"4px"},"children":"Web开发"}],["$","span","Node.js",{"style":{"fontSize":"0.78rem","color":"var(--text-muted)","background":"#f3f2ef","padding":"2px 10px","borderRadius":"4px"},"children":"Node.js"}],["$","span","Express",{"style":{"fontSize":"0.78rem","color":"var(--text-muted)","background":"#f3f2ef","padding":"2px 10px","borderRadius":"4px"},"children":"Express"}]]}],["$","div",null,{"className":"page-module__dgei_G__meta","children":[["$","time",null,{"children":"2026年5月20日"}],["$","span",null,{"children":"·"}],["$","span",null,{"children":["阅读时间 ",3," 分钟"]}]]}]]}],["$","div",null,{"className":"page-module__dgei_G__content","children":["$","div",null,{"class":"blog-post-body","children":["$","div",null,{"class":"container","children":[["$","h1",null,{"children":"科研小白一天学会做个人学术网站"}],["$","div",null,{"class":"meta","children":"📅 学习日期：2026.05.20  |  ✍️ 作者：一个从零开始的科研新手  |  ⏱ 全文约 2300 字"}],["$","p",null,{"className":"mdx-content","children":["从\"只会双击打开 HTML\"到\"拥有自己的动态学术网站\"，我花了一天。作为一名科研小白，我之前对网站的理解仅限于\"浏览器能打开一个文件\"。今天，我决定给自己一个挑战：",["$","strong",null,{"className":"mdx-content","children":"用一天时间，从零开始搭建一个个人学术网站"}],"。最终，我真的做到了。这篇文章会完整记录我的学习路径——所有代码都可以直接复制使用，不需要任何编程基础。"]}],["$","h2",null,{"className":"mdx-content","children":"📘 上午：理解\"网页到底是什么\""}],["$","h3",null,{"className":"mdx-content","children":"8:00 - 9:00 重新认识三个字母：HTML、CSS、JS"}],["$","p",null,{"className":"mdx-content","children":"我一直以为做网页需要学一门很复杂的语言。其实，网页就三样东西："}],["$","ul",null,{"className":"mdx-content","children":["\n",["$","li",null,{"className":"mdx-content","children":[["$","strong",null,{"className":"mdx-content","children":"HTML"}],"：房子的框架（标题、段落、图片的位置）"]}],"\n",["$","li",null,{"className":"mdx-content","children":[["$","strong",null,{"className":"mdx-content","children":"CSS"}],"：装修（颜色、字体、布局）"]}],"\n",["$","li",null,{"className":"mdx-content","children":[["$","strong",null,{"className":"mdx-content","children":"JavaScript"}],"：开关（点击按钮、弹出提示、动态更新内容）"]}],"\n"]}],["$","p",null,{"className":"mdx-content","children":["我做了一个小实验：新建一个 ",["$","code",null,{"className":"mdx-content","children":"test.html"}],"，用记事本写了几行代码，双击用浏览器打开——我的第一个\"网页\"诞生了！虽然丑，但我明白了：",["$","strong",null,{"className":"mdx-content","children":"HTML 就是带尖括号的文本，浏览器负责把它渲染成漂亮的页面"}],"。"]}],["$","h3",null,{"className":"mdx-content","children":"9:00 - 10:00 加上 CSS，让页面变好看"}],["$","p",null,{"className":"mdx-content","children":["我学了一点点 CSS，把页面加上字体、边框和背景颜色。刷新浏览器——页面变专业了。我意识到：",["$","strong",null,{"className":"mdx-content","children":"不需要美术天赋，几行 CSS 就能让学术网站看起来很正经"}],"。"]}],["$","h3",null,{"className":"mdx-content","children":"10:00 - 11:00 加上 JavaScript，让页面\"动起来\""}],["$","p",null,{"className":"mdx-content","children":["我想让点击\"显示更多\"按钮时，额外显示一段研究介绍。于是学了最简单的 JavaScript 函数。一上午，我掌握了静态网页的全部基础。但这样的网站有一个问题——",["$","strong",null,{"className":"mdx-content","children":"每次更新论文列表，都要手动改 HTML 文件"}],"。我需要一个更智能的方式。"]}],["$","h2",null,{"className":"mdx-content","children":"☕ 中午：认识 Node.js —— 让 JavaScript 跑到服务器上"}],["$","h3",null,{"className":"mdx-content","children":"11:30 - 12:30 Node.js 是什么？"}],["$","p",null,{"className":"mdx-content","children":["我以前以为 JavaScript 只能在浏览器里运行。Node.js 打破了这个限制——它让我可以在电脑上直接运行 JS 文件，读取文件、监听网络请求。我做了第一个 Node.js 程序：新建 ",["$","code",null,{"className":"mdx-content","children":"hello.js"}],"，写入 ",["$","code",null,{"className":"mdx-content","children":"console.log(\"Hello\")"}],"，然后在终端输入 ",["$","code",null,{"className":"mdx-content","children":"node hello.js"}],"，看到了输出。",["$","strong",null,{"className":"mdx-content","children":"原来我早就安装了 Node.js"}],"，只是从来没用过。"]}],["$","h3",null,{"className":"mdx-content","children":"13:00 - 14:00 用 Node.js 创建一个最简单的服务器"}],"$L3","$L4","$L5","$L6","$L7","$L8","$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10","$L11","$L12","$L13","$L14","$L15","$L16","$L17","$L18","$L19","$L1a","$L1b","$L1c","$L1d","$L1e","$L1f","$L20","$L21"]}]}]}]]}]}],["$L22"],"$L23"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"yeZMsztteOw-6Xt256nmZ"}
-3:["$","p",null,{"className":"mdx-content","children":["我照着教程写了 10 行代码，在终端运行，然后打开浏览器访问 ",["$","code",null,{"className":"mdx-content","children":"http://localhost:3000"}],"——看到了响应。这是我第一次让 JavaScript 当\"后台\"。虽然它只是返回了一行文字，但我明白了：网页可以不是静态文件，而是由程序实时生成的。"]}]
-4:["$","h3",null,{"className":"mdx-content","children":"14:00 - 15:00 遇到端口占用的错误，学会了解决"}]
-5:["$","p",null,{"className":"mdx-content","children":["运行第二次时，报错 ",["$","code",null,{"className":"mdx-content","children":"EADDRINUSE"}],"。原来之前的服务器没关。按 Ctrl+C 终止就好了。",["$","strong",null,{"className":"mdx-content","children":"每一个错误都是学习机会"}],"——现在我知道端口是什么了。"]}]
-6:["$","h2",null,{"className":"mdx-content","children":"⚡ 下午：用 Express 框架，10 分钟搭出动态网站"}]
-7:["$","h3",null,{"className":"mdx-content","children":"15:00 - 16:00 Express 让代码减少 60%"}]
-8:["$","p",null,{"className":"mdx-content","children":["原生 Node.js 写起来太啰嗦。我安装了 Express，写了一个 ",["$","code",null,{"className":"mdx-content","children":"app.js"}],"，返回包含当前时间的动态 HTML。**动态网页！**每次刷新，时间都会更新。这让我意识到：学术网站也可以动态显示最新论文、引用次数、会议截止日等实时信息。"]}]
-9:["$","h3",null,{"className":"mdx-content","children":"16:00 - 17:00 把静态文件也交给 Express"}]
-a:["$","p",null,{"className":"mdx-content","children":["我创建了一个 ",["$","code",null,{"className":"mdx-content","children":"public"}]," 文件夹，把 ",["$","code",null,{"className":"mdx-content","children":"style.css"}]," 放进去，然后代码中加一行 ",["$","code",null,{"className":"mdx-content","children":"app.use(express.static('public'))"}],"。这样浏览器访问 ",["$","code",null,{"className":"mdx-content","children":"/style.css"}]," 就能自动拿到文件。",["$","strong",null,{"className":"mdx-content","children":"再也不用手动处理文件读取了"}],"。"]}]
-b:["$","h3",null,{"className":"mdx-content","children":"17:00 - 18:00 最终成果：一个完整的个人学术网站"}]
-c:["$","p",null,{"className":"mdx-content","children":["我把一天学到的东西整合起来，做了一个真正能用的",["$","strong",null,{"className":"mdx-content","children":"个人学术网站"}],"，包含：主页（介绍、照片）、研究兴趣列表、论文列表（带链接）、联系表单。完整代码见下方（可直接复制使用）。"]}]
-d:["$","h2",null,{"className":"mdx-content","children":"🌙 晚上：部署上线，让全世界看到"}]
-e:["$","p",null,{"className":"mdx-content","children":["我用 ",["$","strong",null,{"className":"mdx-content","children":"Railway"}],"（免费，无需信用卡）一键部署：把项目文件夹上传到 GitHub，在 Railway.app 中新建项目，选择 Deploy from GitHub repo，它会自动识别 Node.js，生成一个 ",["$","code",null,{"className":"mdx-content","children":"*.up.railway.app"}]," 的网址。我的学术网站现在全球可访问了！"]}]
-f:["$","h2",null,{"className":"mdx-content","children":"📦 完整代码（复制即用）"}]
-10:["$","p",null,{"className":"mdx-content","children":["下面的代码是一个完整的学术网站（基于 Express + EJS），你可以按照注释一步步操作。把代码保存成文件，在电脑上运行 ",["$","code",null,{"className":"mdx-content","children":"node app.js"}]," 就能看到效果。"]}]
-11:["$","h3",null,{"className":"mdx-content","children":"项目结构"}]
-12:["$","pre",null,{"className":"mdx-content","children":["$","code",null,{"className":"mdx-content","children":"my_academic_site/\n├── public/\n│   ├── profile.jpg      （放一张你的照片）\n│   └── style.css\n├── views/\n│   └── index.ejs\n├── package.json\n└── app.js\n"}]}]
-13:["$","h3",null,{"className":"mdx-content","children":"1. 初始化并安装依赖"}]
-14:["$","pre",null,{"className":"mdx-content","children":["$","code",null,{"className":"language-bash","children":"mkdir my_academic_site && cd my_academic_site\nnpm init -y\nnpm install express ejs\n"}]}]
-15:["$","h3",null,{"className":"mdx-content","children":"2. app.js（服务器代码）"}]
-16:["$","pre",null,{"className":"mdx-content","children":["$","code",null,{"className":"language-javascript","children":"const express = require('express');\nconst app = express();\nconst port = 3000;\n\napp.set('view engine', 'ejs');\napp.use(express.static('public'));\napp.use(express.urlencoded({ extended: true }));\n\nconst papers = [\n    { title: \"深度学习在图像识别中的应用\", venue: \"CVPR 2024\", link: \"#\" },\n    { title: \"基于图神经网络的推荐系统\", venue: \"KDD 2024\", link: \"#\" }\n];\n\napp.get('/', (req, res) => {\n    res.render('index', {\n        name: \"张三\",\n        title: \"博士研究生\",\n        institution: \"XX大学计算机学院\",\n        interests: [\"机器学习\", \"计算机视觉\", \"数据挖掘\"],\n        papers: papers\n    });\n});\n\napp.post('/contact', (req, res) => {\n    console.log(req.body);\n    res.send('<h1>收到留言，我会尽快回复！</h1><a href=\"/\">返回首页</a>');\n});\n\napp.listen(port, () => {\n    console.log(`学术网站运行在 http://localhost:${port}`);\n});\n"}]}]
-17:["$","h3",null,{"className":"mdx-content","children":"3. views/index.ejs（页面模板）"}]
-24:T5c2,<!DOCTYPE html>
+3:T267c,<div class="blog-post-body">
+<div class="container">
+
+# 科研小白一天学会做个人学术网站
+
+<div class="meta">📅 学习日期：2026.05.20 &nbsp;|&nbsp; ✍️ 作者：一个从零开始的科研新手 &nbsp;|&nbsp; ⏱ 全文约 2300 字</div>
+
+从"只会双击打开 HTML"到"拥有自己的动态学术网站"，我花了一天。作为一名科研小白，我之前对网站的理解仅限于"浏览器能打开一个文件"。今天，我决定给自己一个挑战：**用一天时间，从零开始搭建一个个人学术网站**。最终，我真的做到了。这篇文章会完整记录我的学习路径——所有代码都可以直接复制使用，不需要任何编程基础。
+
+## 📘 上午：理解"网页到底是什么"
+
+### 8:00 - 9:00 重新认识三个字母：HTML、CSS、JS
+
+我一直以为做网页需要学一门很复杂的语言。其实，网页就三样东西：
+
+- **HTML**：房子的框架（标题、段落、图片的位置）
+- **CSS**：装修（颜色、字体、布局）
+- **JavaScript**：开关（点击按钮、弹出提示、动态更新内容）
+
+我做了一个小实验：新建一个 `test.html`，用记事本写了几行代码，双击用浏览器打开——我的第一个"网页"诞生了！虽然丑，但我明白了：**HTML 就是带尖括号的文本，浏览器负责把它渲染成漂亮的页面**。
+
+### 9:00 - 10:00 加上 CSS，让页面变好看
+
+我学了一点点 CSS，把页面加上字体、边框和背景颜色。刷新浏览器——页面变专业了。我意识到：**不需要美术天赋，几行 CSS 就能让学术网站看起来很正经**。
+
+### 10:00 - 11:00 加上 JavaScript，让页面"动起来"
+
+我想让点击"显示更多"按钮时，额外显示一段研究介绍。于是学了最简单的 JavaScript 函数。一上午，我掌握了静态网页的全部基础。但这样的网站有一个问题——**每次更新论文列表，都要手动改 HTML 文件**。我需要一个更智能的方式。
+
+## ☕ 中午：认识 Node.js —— 让 JavaScript 跑到服务器上
+
+### 11:30 - 12:30 Node.js 是什么？
+
+我以前以为 JavaScript 只能在浏览器里运行。Node.js 打破了这个限制——它让我可以在电脑上直接运行 JS 文件，读取文件、监听网络请求。我做了第一个 Node.js 程序：新建 `hello.js`，写入 `console.log("Hello")`，然后在终端输入 `node hello.js`，看到了输出。**原来我早就安装了 Node.js**，只是从来没用过。
+
+### 13:00 - 14:00 用 Node.js 创建一个最简单的服务器
+
+我照着教程写了 10 行代码，在终端运行，然后打开浏览器访问 `http://localhost:3000`——看到了响应。这是我第一次让 JavaScript 当"后台"。虽然它只是返回了一行文字，但我明白了：网页可以不是静态文件，而是由程序实时生成的。
+
+### 14:00 - 15:00 遇到端口占用的错误，学会了解决
+
+运行第二次时，报错 `EADDRINUSE`。原来之前的服务器没关。按 Ctrl+C 终止就好了。**每一个错误都是学习机会**——现在我知道端口是什么了。
+
+## ⚡ 下午：用 Express 框架，10 分钟搭出动态网站
+
+### 15:00 - 16:00 Express 让代码减少 60%
+
+原生 Node.js 写起来太啰嗦。我安装了 Express，写了一个 `app.js`，返回包含当前时间的动态 HTML。**动态网页！**每次刷新，时间都会更新。这让我意识到：学术网站也可以动态显示最新论文、引用次数、会议截止日等实时信息。
+
+### 16:00 - 17:00 把静态文件也交给 Express
+
+我创建了一个 `public` 文件夹，把 `style.css` 放进去，然后代码中加一行 `app.use(express.static('public'))`。这样浏览器访问 `/style.css` 就能自动拿到文件。**再也不用手动处理文件读取了**。
+
+### 17:00 - 18:00 最终成果：一个完整的个人学术网站
+
+我把一天学到的东西整合起来，做了一个真正能用的**个人学术网站**，包含：主页（介绍、照片）、研究兴趣列表、论文列表（带链接）、联系表单。完整代码见下方（可直接复制使用）。
+
+## 🌙 晚上：部署上线，让全世界看到
+
+我用 **Railway**（免费，无需信用卡）一键部署：把项目文件夹上传到 GitHub，在 Railway.app 中新建项目，选择 Deploy from GitHub repo，它会自动识别 Node.js，生成一个 `*.up.railway.app` 的网址。我的学术网站现在全球可访问了！
+
+## 📦 完整代码（复制即用）
+
+下面的代码是一个完整的学术网站（基于 Express + EJS），你可以按照注释一步步操作。把代码保存成文件，在电脑上运行 `node app.js` 就能看到效果。
+
+### 项目结构
+
+```
+my_academic_site/
+├── public/
+│   ├── profile.jpg      （放一张你的照片）
+│   └── style.css
+├── views/
+│   └── index.ejs
+├── package.json
+└── app.js
+```
+
+### 1. 初始化并安装依赖
+
+```bash
+mkdir my_academic_site && cd my_academic_site
+npm init -y
+npm install express ejs
+```
+
+### 2. app.js（服务器代码）
+
+```javascript
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+
+const papers = [
+    { title: "深度学习在图像识别中的应用", venue: "CVPR 2024", link: "#" },
+    { title: "基于图神经网络的推荐系统", venue: "KDD 2024", link: "#" }
+];
+
+app.get('/', (req, res) => {
+    res.render('index', {
+        name: "张三",
+        title: "博士研究生",
+        institution: "XX大学计算机学院",
+        interests: ["机器学习", "计算机视觉", "数据挖掘"],
+        papers: papers
+    });
+});
+
+app.post('/contact', (req, res) => {
+    console.log(req.body);
+    res.send('<h1>收到留言，我会尽快回复！</h1><a href="/">返回首页</a>');
+});
+
+app.listen(port, () => {
+    console.log(`学术网站运行在 http://localhost:${port}`);
+});
+```
+
+### 3. views/index.ejs（页面模板）
+
+```ejs
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -76,16 +179,375 @@ f:["$","h2",null,{"className":"mdx-content","children":"📦 完整代码（复�
     </div>
 </body>
 </html>
-18:["$","pre",null,{"className":"mdx-content","children":["$","code",null,{"className":"language-ejs","children":"$24"}]}]
-19:["$","h3",null,{"className":"mdx-content","children":"4. public/style.css（样式）"}]
-1a:["$","pre",null,{"className":"mdx-content","children":["$","code",null,{"className":"language-css","children":"body {\n    font-family: 'Segoe UI', Roboto, sans-serif;\n    background-color: #f8f9fa;\n    margin: 0;\n    padding: 20px;\n}\n.container {\n    max-width: 800px;\n    margin: auto;\n    background: white;\n    padding: 30px;\n    border-radius: 20px;\n    box-shadow: 0 0 20px rgba(0,0,0,0.05);\n}\n.avatar {\n    width: 120px;\n    height: 120px;\n    border-radius: 50%;\n    object-fit: cover;\n}\nh1 { color: #2c3e50; }\n.title { color: #3498db; font-weight: bold; }\nsection {\n    margin: 30px 0;\n    padding-bottom: 20px;\n    border-bottom: 1px solid #eee;\n}\n.paper {\n    background: #f1f5f9;\n    padding: 12px;\n    margin: 10px 0;\n    border-radius: 8px;\n}\ninput, textarea, button {\n    width: 100%;\n    padding: 10px;\n    margin: 8px 0;\n    border-radius: 6px;\n    border: 1px solid #ccc;\n}\nbutton {\n    background-color: #3498db;\n    color: white;\n    border: none;\n    cursor: pointer;\n}\n"}]}]
-1b:["$","h3",null,{"className":"mdx-content","children":"5. 运行命令"}]
-1c:["$","pre",null,{"className":"mdx-content","children":["$","code",null,{"className":"language-bash","children":"node app.js\n"}]}]
-1d:["$","p",null,{"className":"mdx-content","children":["打开浏览器访问 ",["$","code",null,{"className":"mdx-content","children":"http://localhost:3000"}]," 即可看到你的学术网站。把头像换成你自己的照片，修改论文列表和基本信息，一个专业的个人主页就完成啦！"]}]
-1e:["$","h2",null,{"className":"mdx-content","children":"📊 总结：一天究竟学到了什么？"}]
-1f:["$","table",null,{"children":[["$","tr",null,{"children":[["$","th",null,{"children":"时间"}],["$","th",null,{"children":"里程碑"}],["$","th",null,{"children":"产出"}]]}],["$","tr",null,{"children":[["$","td",null,{"children":"上午"}],["$","td",null,{"children":"HTML/CSS/JS 基础"}],["$","td",null,{"children":"静态个人介绍页"}]]}],["$","tr",null,{"children":[["$","td",null,{"children":"中午"}],["$","td",null,{"children":"Node.js 运行环境"}],["$","td",null,{"children":"第一个命令行程序"}]]}],["$","tr",null,{"children":[["$","td",null,{"children":"下午"}],["$","td",null,{"children":"Express + 模板引擎"}],["$","td",null,{"children":"动态学术网站（数据驱动）"}]]}],["$","tr",null,{"children":[["$","td",null,{"children":"晚上"}],["$","td",null,{"children":"部署上线"}],["$","td",null,{"children":"公网可访问的个人网站"}]]}]]}]
-20:["$","blockquote",null,{"className":"mdx-content","children":["\n",["$","p",null,{"className":"mdx-content","children":["$","strong",null,{"className":"mdx-content","children":"给科研小白的建议"}]}],"\n",["$","ul",null,{"className":"mdx-content","children":["\n",["$","li",null,{"className":"mdx-content","children":"不要怕代码：我们不需要成为程序员，只需复制粘贴，替换成你的名字、论文即可。"}],"\n",["$","li",null,{"className":"mdx-content","children":"分步验证：每写几行就保存、刷新浏览器，看到效果会给你巨大信心。"}],"\n",["$","li",null,{"className":"mdx-content","children":"善用模板：EJS 让你把数据（论文列表）和界面分离，以后更新论文只需修改一个数组。"}],"\n",["$","li",null,{"className":"mdx-content","children":"下一步：可以给网站加上 RSS 订阅、Google Scholar 自动同步、留言板数据库等功能。"}],"\n"]}],"\n"]}]
-21:["$","div",null,{"class":"footer-note","children":"© 2026 一个从零开始的科研新手 — 一天也能学会做网站"}]
-22:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/10xnt37.porm9.css","precedence":"next"}]
-23:["$","$L25",null,{"children":["$","$26",null,{"name":"Next.MetadataOutlet","children":"$@27"}]}]
-27:null
+```
+
+### 4. public/style.css（样式）
+
+```css
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+h1 { color: #2c3e50; }
+.title { color: #3498db; font-weight: bold; }
+section {
+    margin: 30px 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+.paper {
+    background: #f1f5f9;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+```
+
+### 5. 运行命令
+
+```bash
+node app.js
+```
+
+打开浏览器访问 `http://localhost:3000` 即可看到你的学术网站。把头像换成你自己的照片，修改论文列表和基本信息，一个专业的个人主页就完成啦！
+
+## 📊 总结：一天究竟学到了什么？
+
+<table>
+  <tr><th>时间</th><th>里程碑</th><th>产出</th></tr>
+  <tr><td>上午</td><td>HTML/CSS/JS 基础</td><td>静态个人介绍页</td></tr>
+  <tr><td>中午</td><td>Node.js 运行环境</td><td>第一个命令行程序</td></tr>
+  <tr><td>下午</td><td>Express + 模板引擎</td><td>动态学术网站（数据驱动）</td></tr>
+  <tr><td>晚上</td><td>部署上线</td><td>公网可访问的个人网站</td></tr>
+</table>
+
+> **给科研小白的建议**
+>
+> - 不要怕代码：我们不需要成为程序员，只需复制粘贴，替换成你的名字、论文即可。
+> - 分步验证：每写几行就保存、刷新浏览器，看到效果会给你巨大信心。
+> - 善用模板：EJS 让你把数据（论文列表）和界面分离，以后更新论文只需修改一个数组。
+> - 下一步：可以给网站加上 RSS 订阅、Google Scholar 自动同步、留言板数据库等功能。
+
+<div class="footer-note">© 2026 一个从零开始的科研新手 — 一天也能学会做网站</div>
+
+</div>
+</div>4:T240d,
+
+科研小白一天学会做个人学术网站
+📅 学习日期：2026.05.20  |  ✍️ 作者：一个从零开始的科研新手  |  ⏱ 全文约 2300 字
+从"只会双击打开 HTML"到"拥有自己的动态学术网站"，我花了一天。作为一名科研小白，我之前对网站的理解仅限于"浏览器能打开一个文件"。今天，我决定给自己一个挑战：用一天时间，从零开始搭建一个个人学术网站。最终，我真的做到了。这篇文章会完整记录我的学习路径——所有代码都可以直接复制使用，不需要任何编程基础。
+📘 上午：理解"网页到底是什么"
+8:00 - 9:00 重新认识三个字母：HTML、CSS、JS
+我一直以为做网页需要学一门很复杂的语言。其实，网页就三样东西：
+
+HTML：房子的框架（标题、段落、图片的位置）
+CSS：装修（颜色、字体、布局）
+JavaScript：开关（点击按钮、弹出提示、动态更新内容）
+
+我做了一个小实验：新建一个 test.html，用记事本写了几行代码，双击用浏览器打开——我的第一个"网页"诞生了！虽然丑，但我明白了：HTML 就是带尖括号的文本，浏览器负责把它渲染成漂亮的页面。
+9:00 - 10:00 加上 CSS，让页面变好看
+我学了一点点 CSS，把页面加上字体、边框和背景颜色。刷新浏览器——页面变专业了。我意识到：不需要美术天赋，几行 CSS 就能让学术网站看起来很正经。
+10:00 - 11:00 加上 JavaScript，让页面"动起来"
+我想让点击"显示更多"按钮时，额外显示一段研究介绍。于是学了最简单的 JavaScript 函数。一上午，我掌握了静态网页的全部基础。但这样的网站有一个问题——每次更新论文列表，都要手动改 HTML 文件。我需要一个更智能的方式。
+☕ 中午：认识 Node.js —— 让 JavaScript 跑到服务器上
+11:30 - 12:30 Node.js 是什么？
+我以前以为 JavaScript 只能在浏览器里运行。Node.js 打破了这个限制——它让我可以在电脑上直接运行 JS 文件，读取文件、监听网络请求。我做了第一个 Node.js 程序：新建 hello.js，写入 console.log("Hello")，然后在终端输入 node hello.js，看到了输出。原来我早就安装了 Node.js，只是从来没用过。
+13:00 - 14:00 用 Node.js 创建一个最简单的服务器
+我照着教程写了 10 行代码，在终端运行，然后打开浏览器访问 http://localhost:3000——看到了响应。这是我第一次让 JavaScript 当"后台"。虽然它只是返回了一行文字，但我明白了：网页可以不是静态文件，而是由程序实时生成的。
+14:00 - 15:00 遇到端口占用的错误，学会了解决
+运行第二次时，报错 EADDRINUSE。原来之前的服务器没关。按 Ctrl+C 终止就好了。每一个错误都是学习机会——现在我知道端口是什么了。
+⚡ 下午：用 Express 框架，10 分钟搭出动态网站
+15:00 - 16:00 Express 让代码减少 60%
+原生 Node.js 写起来太啰嗦。我安装了 Express，写了一个 app.js，返回包含当前时间的动态 HTML。**动态网页！**每次刷新，时间都会更新。这让我意识到：学术网站也可以动态显示最新论文、引用次数、会议截止日等实时信息。
+16:00 - 17:00 把静态文件也交给 Express
+我创建了一个 public 文件夹，把 style.css 放进去，然后代码中加一行 app.use(express.static('public'))。这样浏览器访问 /style.css 就能自动拿到文件。再也不用手动处理文件读取了。
+17:00 - 18:00 最终成果：一个完整的个人学术网站
+我把一天学到的东西整合起来，做了一个真正能用的个人学术网站，包含：主页（介绍、照片）、研究兴趣列表、论文列表（带链接）、联系表单。完整代码见下方（可直接复制使用）。
+🌙 晚上：部署上线，让全世界看到
+我用 Railway（免费，无需信用卡）一键部署：把项目文件夹上传到 GitHub，在 Railway.app 中新建项目，选择 Deploy from GitHub repo，它会自动识别 Node.js，生成一个 *.up.railway.app 的网址。我的学术网站现在全球可访问了！
+📦 完整代码（复制即用）
+下面的代码是一个完整的学术网站（基于 Express + EJS），你可以按照注释一步步操作。把代码保存成文件，在电脑上运行 node app.js 就能看到效果。
+项目结构
+my_academic_site/
+├── public/
+│   ├── profile.jpg      （放一张你的照片）
+│   └── style.css
+├── views/
+│   └── index.ejs
+├── package.json
+└── app.js
+
+1. 初始化并安装依赖
+mkdir my_academic_site && cd my_academic_site
+npm init -y
+npm install express ejs
+
+2. app.js（服务器代码）
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+
+const papers = [
+    { title: "深度学习在图像识别中的应用", venue: "CVPR 2024", link: "#" },
+    { title: "基于图神经网络的推荐系统", venue: "KDD 2024", link: "#" }
+];
+
+app.get('/', (req, res) => {
+    res.render('index', {
+        name: "张三",
+        title: "博士研究生",
+        institution: "XX大学计算机学院",
+        interests: ["机器学习", "计算机视觉", "数据挖掘"],
+        papers: papers
+    });
+});
+
+app.post('/contact', (req, res) => {
+    console.log(req.body);
+    res.send('<h1>收到留言，我会尽快回复！</h1><a href="/">返回首页</a>');
+});
+
+app.listen(port, () => {
+    console.log(`学术网站运行在 http://localhost:${port}`);
+});
+
+3. views/index.ejs（页面模板）
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%= name %> - 个人学术主页</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="/profile.jpg" alt="头像" class="avatar">
+            <h1><%= name %></h1>
+            <p class="title"><%= title %></p>
+            <p class="institution"><%= institution %></p>
+        </header>
+
+        <section>
+            <h2>研究兴趣</h2>
+            <ul>
+                <% interests.forEach(i => { %>
+                    <li><%= i %></li>
+                <% }); %>
+            </ul>
+        </section>
+
+        <section>
+            <h2>代表性论文</h2>
+            <% papers.forEach(p => { %>
+                <div class="paper">
+                    <strong><%= p.title %></strong><br>
+                    <em><%= p.venue %></em>
+                    <a href="<%= p.link %>">[PDF]</a>
+                </div>
+            <% }); %>
+        </section>
+
+        <section>
+            <h2>联系我</h2>
+            <form method="POST" action="/contact">
+                <input type="email" name="email" placeholder="您的邮箱" required>
+                <textarea name="message" placeholder="留言内容" rows="4"></textarea>
+                <button type="submit">发送</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>© 2025 <%= name %></p>
+        </footer>
+    </div>
+</body>
+</html>
+
+4. public/style.css（样式）
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+h1 { color: #2c3e50; }
+.title { color: #3498db; font-weight: bold; }
+section {
+    margin: 30px 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+.paper {
+    background: #f1f5f9;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+5. 运行命令
+node app.js
+
+打开浏览器访问 http://localhost:3000 即可看到你的学术网站。把头像换成你自己的照片，修改论文列表和基本信息，一个专业的个人主页就完成啦！
+📊 总结：一天究竟学到了什么？
+
+  时间里程碑产出
+  上午HTML/CSS/JS 基础静态个人介绍页
+  中午Node.js 运行环境第一个命令行程序
+  下午Express + 模板引擎动态学术网站（数据驱动）
+  晚上部署上线公网可访问的个人网站
+
+
+给科研小白的建议
+
+不要怕代码：我们不需要成为程序员，只需复制粘贴，替换成你的名字、论文即可。
+分步验证：每写几行就保存、刷新浏览器，看到效果会给你巨大信心。
+善用模板：EJS 让你把数据（论文列表）和界面分离，以后更新论文只需修改一个数组。
+下一步：可以给网站加上 RSS 订阅、Google Scholar 自动同步、留言板数据库等功能。
+
+
+© 2026 一个从零开始的科研新手 — 一天也能学会做网站
+
+0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"page-module__dgei_G__container","children":["$","article",null,{"className":"page-module__dgei_G__article","children":[["$","$L2",null,{"post":{"title":"科研小白一天学会做个人学术网站","date":"2026-05-20T00:00:00.000Z","tags":["学习笔记","Web开发","Node.js","Express"],"excerpt":"从双击打开 HTML 到拥有动态学术网站，我花了一天。完整记录从零搭建个人学术网站的学习路径，所有代码可直接复制使用。","metadata":{"readingTime":5,"wordCount":1262.2},"slug":"learn-web-dev-day","body":"$3","plain":"$4","readingTimeMin":3}}],"$L5"]}]}],["$L6","$L7"],"$L8"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"XX1cFeENA8OJ-BboAO1nN"}
+5:["$","div",null,{"className":"page-module__dgei_G__content","children":["$","div",null,{"class":"blog-post-body","children":["$","div",null,{"class":"container","children":[["$","h1",null,{"children":"科研小白一天学会做个人学术网站"}],["$","div",null,{"class":"meta","children":"📅 学习日期：2026.05.20  |  ✍️ 作者：一个从零开始的科研新手  |  ⏱ 全文约 2300 字"}],["$","p",null,{"className":"mdx-content","children":["从\"只会双击打开 HTML\"到\"拥有自己的动态学术网站\"，我花了一天。作为一名科研小白，我之前对网站的理解仅限于\"浏览器能打开一个文件\"。今天，我决定给自己一个挑战：",["$","strong",null,{"className":"mdx-content","children":"用一天时间，从零开始搭建一个个人学术网站"}],"。最终，我真的做到了。这篇文章会完整记录我的学习路径——所有代码都可以直接复制使用，不需要任何编程基础。"]}],["$","h2",null,{"className":"mdx-content","children":"📘 上午：理解\"网页到底是什么\""}],["$","h3",null,{"className":"mdx-content","children":"8:00 - 9:00 重新认识三个字母：HTML、CSS、JS"}],["$","p",null,{"className":"mdx-content","children":"我一直以为做网页需要学一门很复杂的语言。其实，网页就三样东西："}],["$","ul",null,{"className":"mdx-content","children":["\n",["$","li",null,{"className":"mdx-content","children":[["$","strong",null,{"className":"mdx-content","children":"HTML"}],"：房子的框架（标题、段落、图片的位置）"]}],"\n",["$","li",null,{"className":"mdx-content","children":[["$","strong",null,{"className":"mdx-content","children":"CSS"}],"：装修（颜色、字体、布局）"]}],"\n",["$","li",null,{"className":"mdx-content","children":[["$","strong",null,{"className":"mdx-content","children":"JavaScript"}],"：开关（点击按钮、弹出提示、动态更新内容）"]}],"\n"]}],["$","p",null,{"className":"mdx-content","children":["我做了一个小实验：新建一个 ",["$","code",null,{"className":"mdx-content","children":"test.html"}],"，用记事本写了几行代码，双击用浏览器打开——我的第一个\"网页\"诞生了！虽然丑，但我明白了：",["$","strong",null,{"className":"mdx-content","children":"HTML 就是带尖括号的文本，浏览器负责把它渲染成漂亮的页面"}],"。"]}],["$","h3",null,{"className":"mdx-content","children":"9:00 - 10:00 加上 CSS，让页面变好看"}],["$","p",null,{"className":"mdx-content","children":["我学了一点点 CSS，把页面加上字体、边框和背景颜色。刷新浏览器——页面变专业了。我意识到：",["$","strong",null,{"className":"mdx-content","children":"不需要美术天赋，几行 CSS 就能让学术网站看起来很正经"}],"。"]}],["$","h3",null,{"className":"mdx-content","children":"10:00 - 11:00 加上 JavaScript，让页面\"动起来\""}],["$","p",null,{"className":"mdx-content","children":["我想让点击\"显示更多\"按钮时，额外显示一段研究介绍。于是学了最简单的 JavaScript 函数。一上午，我掌握了静态网页的全部基础。但这样的网站有一个问题——",["$","strong",null,{"className":"mdx-content","children":"每次更新论文列表，都要手动改 HTML 文件"}],"。我需要一个更智能的方式。"]}],["$","h2",null,{"className":"mdx-content","children":"☕ 中午：认识 Node.js —— 让 JavaScript 跑到服务器上"}],["$","h3",null,{"className":"mdx-content","children":"11:30 - 12:30 Node.js 是什么？"}],["$","p",null,{"className":"mdx-content","children":["我以前以为 JavaScript 只能在浏览器里运行。Node.js 打破了这个限制——它让我可以在电脑上直接运行 JS 文件，读取文件、监听网络请求。我做了第一个 Node.js 程序：新建 ",["$","code",null,{"className":"mdx-content","children":"hello.js"}],"，写入 ",["$","code",null,{"className":"mdx-content","children":"console.log(\"Hello\")"}],"，然后在终端输入 ",["$","code",null,{"className":"mdx-content","children":"node hello.js"}],"，看到了输出。",["$","strong",null,{"className":"mdx-content","children":"原来我早就安装了 Node.js"}],"，只是从来没用过。"]}],["$","h3",null,{"className":"mdx-content","children":"13:00 - 14:00 用 Node.js 创建一个最简单的服务器"}],["$","p",null,{"className":"mdx-content","children":["我照着教程写了 10 行代码，在终端运行，然后打开浏览器访问 ",["$","code",null,{"className":"mdx-content","children":"http://localhost:3000"}],"——看到了响应。这是我第一次让 JavaScript 当\"后台\"。虽然它只是返回了一行文字，但我明白了：网页可以不是静态文件，而是由程序实时生成的。"]}],["$","h3",null,{"className":"mdx-content","children":"14:00 - 15:00 遇到端口占用的错误，学会了解决"}],["$","p",null,{"className":"mdx-content","children":["运行第二次时，报错 ",["$","code",null,{"className":"mdx-content","children":"EADDRINUSE"}],"。原来之前的服务器没关。按 Ctrl+C 终止就好了。",["$","strong",null,{"className":"mdx-content","children":"每一个错误都是学习机会"}],"——现在我知道端口是什么了。"]}],["$","h2",null,{"className":"mdx-content","children":"⚡ 下午：用 Express 框架，10 分钟搭出动态网站"}],["$","h3",null,{"className":"mdx-content","children":"15:00 - 16:00 Express 让代码减少 60%"}],["$","p",null,{"className":"mdx-content","children":["原生 Node.js 写起来太啰嗦。我安装了 Express，写了一个 ",["$","code",null,{"className":"mdx-content","children":"app.js"}],"，返回包含当前时间的动态 HTML。**动态网页！**每次刷新，时间都会更新。这让我意识到：学术网站也可以动态显示最新论文、引用次数、会议截止日等实时信息。"]}],["$","h3",null,{"className":"mdx-content","children":"16:00 - 17:00 把静态文件也交给 Express"}],["$","p",null,{"className":"mdx-content","children":["我创建了一个 ",["$","code",null,{"className":"mdx-content","children":"public"}]," 文件夹，把 ",["$","code",null,{"className":"mdx-content","children":"style.css"}]," 放进去，然后代码中加一行 ","$L9","。这样浏览器访问 ","$La"," 就能自动拿到文件。","$Lb","。"]}],"$Lc","$Ld","$Le","$Lf","$L10","$L11","$L12","$L13","$L14","$L15","$L16","$L17","$L18","$L19","$L1a","$L1b","$L1c","$L1d","$L1e","$L1f","$L20","$L21","$L22"]}]}]}]
+6:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/10xnt37.porm9.css","precedence":"next"}]
+7:["$","script","script-0",{"src":"/_next/static/chunks/0pnn8w6zsd3um.js","async":true}]
+8:["$","$L23",null,{"children":["$","$24",null,{"name":"Next.MetadataOutlet","children":"$@25"}]}]
+9:["$","code",null,{"className":"mdx-content","children":"app.use(express.static('public'))"}]
+a:["$","code",null,{"className":"mdx-content","children":"/style.css"}]
+b:["$","strong",null,{"className":"mdx-content","children":"再也不用手动处理文件读取了"}]
+c:["$","h3",null,{"className":"mdx-content","children":"17:00 - 18:00 最终成果：一个完整的个人学术网站"}]
+d:["$","p",null,{"className":"mdx-content","children":["我把一天学到的东西整合起来，做了一个真正能用的",["$","strong",null,{"className":"mdx-content","children":"个人学术网站"}],"，包含：主页（介绍、照片）、研究兴趣列表、论文列表（带链接）、联系表单。完整代码见下方（可直接复制使用）。"]}]
+e:["$","h2",null,{"className":"mdx-content","children":"🌙 晚上：部署上线，让全世界看到"}]
+f:["$","p",null,{"className":"mdx-content","children":["我用 ",["$","strong",null,{"className":"mdx-content","children":"Railway"}],"（免费，无需信用卡）一键部署：把项目文件夹上传到 GitHub，在 Railway.app 中新建项目，选择 Deploy from GitHub repo，它会自动识别 Node.js，生成一个 ",["$","code",null,{"className":"mdx-content","children":"*.up.railway.app"}]," 的网址。我的学术网站现在全球可访问了！"]}]
+10:["$","h2",null,{"className":"mdx-content","children":"📦 完整代码（复制即用）"}]
+11:["$","p",null,{"className":"mdx-content","children":["下面的代码是一个完整的学术网站（基于 Express + EJS），你可以按照注释一步步操作。把代码保存成文件，在电脑上运行 ",["$","code",null,{"className":"mdx-content","children":"node app.js"}]," 就能看到效果。"]}]
+12:["$","h3",null,{"className":"mdx-content","children":"项目结构"}]
+13:["$","pre",null,{"className":"mdx-content","children":["$","code",null,{"className":"mdx-content","children":"my_academic_site/\n├── public/\n│   ├── profile.jpg      （放一张你的照片）\n│   └── style.css\n├── views/\n│   └── index.ejs\n├── package.json\n└── app.js\n"}]}]
+14:["$","h3",null,{"className":"mdx-content","children":"1. 初始化并安装依赖"}]
+15:["$","pre",null,{"className":"mdx-content","children":["$","code",null,{"className":"language-bash","children":"mkdir my_academic_site && cd my_academic_site\nnpm init -y\nnpm install express ejs\n"}]}]
+16:["$","h3",null,{"className":"mdx-content","children":"2. app.js（服务器代码）"}]
+17:["$","pre",null,{"className":"mdx-content","children":["$","code",null,{"className":"language-javascript","children":"const express = require('express');\nconst app = express();\nconst port = 3000;\n\napp.set('view engine', 'ejs');\napp.use(express.static('public'));\napp.use(express.urlencoded({ extended: true }));\n\nconst papers = [\n    { title: \"深度学习在图像识别中的应用\", venue: \"CVPR 2024\", link: \"#\" },\n    { title: \"基于图神经网络的推荐系统\", venue: \"KDD 2024\", link: \"#\" }\n];\n\napp.get('/', (req, res) => {\n    res.render('index', {\n        name: \"张三\",\n        title: \"博士研究生\",\n        institution: \"XX大学计算机学院\",\n        interests: [\"机器学习\", \"计算机视觉\", \"数据挖掘\"],\n        papers: papers\n    });\n});\n\napp.post('/contact', (req, res) => {\n    console.log(req.body);\n    res.send('<h1>收到留言，我会尽快回复！</h1><a href=\"/\">返回首页</a>');\n});\n\napp.listen(port, () => {\n    console.log(`学术网站运行在 http://localhost:${port}`);\n});\n"}]}]
+18:["$","h3",null,{"className":"mdx-content","children":"3. views/index.ejs（页面模板）"}]
+26:T5c2,<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%= name %> - 个人学术主页</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="/profile.jpg" alt="头像" class="avatar">
+            <h1><%= name %></h1>
+            <p class="title"><%= title %></p>
+            <p class="institution"><%= institution %></p>
+        </header>
+
+        <section>
+            <h2>研究兴趣</h2>
+            <ul>
+                <% interests.forEach(i => { %>
+                    <li><%= i %></li>
+                <% }); %>
+            </ul>
+        </section>
+
+        <section>
+            <h2>代表性论文</h2>
+            <% papers.forEach(p => { %>
+                <div class="paper">
+                    <strong><%= p.title %></strong><br>
+                    <em><%= p.venue %></em>
+                    <a href="<%= p.link %>">[PDF]</a>
+                </div>
+            <% }); %>
+        </section>
+
+        <section>
+            <h2>联系我</h2>
+            <form method="POST" action="/contact">
+                <input type="email" name="email" placeholder="您的邮箱" required>
+                <textarea name="message" placeholder="留言内容" rows="4"></textarea>
+                <button type="submit">发送</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>© 2025 <%= name %></p>
+        </footer>
+    </div>
+</body>
+</html>
+19:["$","pre",null,{"className":"mdx-content","children":["$","code",null,{"className":"language-ejs","children":"$26"}]}]
+1a:["$","h3",null,{"className":"mdx-content","children":"4. public/style.css（样式）"}]
+1b:["$","pre",null,{"className":"mdx-content","children":["$","code",null,{"className":"language-css","children":"body {\n    font-family: 'Segoe UI', Roboto, sans-serif;\n    background-color: #f8f9fa;\n    margin: 0;\n    padding: 20px;\n}\n.container {\n    max-width: 800px;\n    margin: auto;\n    background: white;\n    padding: 30px;\n    border-radius: 20px;\n    box-shadow: 0 0 20px rgba(0,0,0,0.05);\n}\n.avatar {\n    width: 120px;\n    height: 120px;\n    border-radius: 50%;\n    object-fit: cover;\n}\nh1 { color: #2c3e50; }\n.title { color: #3498db; font-weight: bold; }\nsection {\n    margin: 30px 0;\n    padding-bottom: 20px;\n    border-bottom: 1px solid #eee;\n}\n.paper {\n    background: #f1f5f9;\n    padding: 12px;\n    margin: 10px 0;\n    border-radius: 8px;\n}\ninput, textarea, button {\n    width: 100%;\n    padding: 10px;\n    margin: 8px 0;\n    border-radius: 6px;\n    border: 1px solid #ccc;\n}\nbutton {\n    background-color: #3498db;\n    color: white;\n    border: none;\n    cursor: pointer;\n}\n"}]}]
+1c:["$","h3",null,{"className":"mdx-content","children":"5. 运行命令"}]
+1d:["$","pre",null,{"className":"mdx-content","children":["$","code",null,{"className":"language-bash","children":"node app.js\n"}]}]
+1e:["$","p",null,{"className":"mdx-content","children":["打开浏览器访问 ",["$","code",null,{"className":"mdx-content","children":"http://localhost:3000"}]," 即可看到你的学术网站。把头像换成你自己的照片，修改论文列表和基本信息，一个专业的个人主页就完成啦！"]}]
+1f:["$","h2",null,{"className":"mdx-content","children":"📊 总结：一天究竟学到了什么？"}]
+20:["$","table",null,{"children":[["$","tr",null,{"children":[["$","th",null,{"children":"时间"}],["$","th",null,{"children":"里程碑"}],["$","th",null,{"children":"产出"}]]}],["$","tr",null,{"children":[["$","td",null,{"children":"上午"}],["$","td",null,{"children":"HTML/CSS/JS 基础"}],["$","td",null,{"children":"静态个人介绍页"}]]}],["$","tr",null,{"children":[["$","td",null,{"children":"中午"}],["$","td",null,{"children":"Node.js 运行环境"}],["$","td",null,{"children":"第一个命令行程序"}]]}],["$","tr",null,{"children":[["$","td",null,{"children":"下午"}],["$","td",null,{"children":"Express + 模板引擎"}],["$","td",null,{"children":"动态学术网站（数据驱动）"}]]}],["$","tr",null,{"children":[["$","td",null,{"children":"晚上"}],["$","td",null,{"children":"部署上线"}],["$","td",null,{"children":"公网可访问的个人网站"}]]}]]}]
+21:["$","blockquote",null,{"className":"mdx-content","children":["\n",["$","p",null,{"className":"mdx-content","children":["$","strong",null,{"className":"mdx-content","children":"给科研小白的建议"}]}],"\n",["$","ul",null,{"className":"mdx-content","children":["\n",["$","li",null,{"className":"mdx-content","children":"不要怕代码：我们不需要成为程序员，只需复制粘贴，替换成你的名字、论文即可。"}],"\n",["$","li",null,{"className":"mdx-content","children":"分步验证：每写几行就保存、刷新浏览器，看到效果会给你巨大信心。"}],"\n",["$","li",null,{"className":"mdx-content","children":"善用模板：EJS 让你把数据（论文列表）和界面分离，以后更新论文只需修改一个数组。"}],"\n",["$","li",null,{"className":"mdx-content","children":"下一步：可以给网站加上 RSS 订阅、Google Scholar 自动同步、留言板数据库等功能。"}],"\n"]}],"\n"]}]
+22:["$","div",null,{"class":"footer-note","children":"© 2026 一个从零开始的科研新手 — 一天也能学会做网站"}]
+25:null

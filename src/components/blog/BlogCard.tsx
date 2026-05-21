@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useT } from "@/lib/i18n/context";
+import { useLanguage } from "@/lib/i18n/context";
 import { formatDate } from "@/lib/utils";
 import { TagBadge } from "@/components/shared/TagBadge";
 import type { BlogPost } from "@/lib/types";
@@ -12,7 +12,7 @@ interface BlogCardProps {
 }
 
 export function BlogCard({ post }: BlogCardProps) {
-  const t = useT();
+  const { t, lang } = useLanguage();
 
   return (
     <Link href={`/blog/${post.slug}`} className={styles.card}>
@@ -29,7 +29,7 @@ export function BlogCard({ post }: BlogCardProps) {
       </div>
       <p className={styles.excerpt}>{post.excerpt}</p>
       <div className={styles.meta}>
-        <time>{formatDate(post.date)}</time>
+        <time>{formatDate(post.date, lang)}</time>
         <span>·</span>
         <span>{t.blog.readingTime(post.readingTimeMin)}</span>
       </div>
