@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liuxinlllx.github.io</id>
     <title>Xin Liu's Blog</title>
-    <updated>2026-05-21T07:11:28.991Z</updated>
+    <updated>2026-05-21T07:26:28.535Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>Xin Liu</name>
@@ -288,12 +288,13 @@ node app.js
 
 ## 📊 总结：一天究竟学到了什么？
 
-| 时间 | 里程碑 | 产出 |
-|------|--------|------|
-| 上午 | HTML/CSS/JS 基础 | 静态个人介绍页 |
-| 中午 | Node.js 运行环境 | 第一个命令行程序 |
-| 下午 | Express + 模板引擎 | 动态学术网站（数据驱动） |
-| 晚上 | 部署上线 | 公网可访问的个人网站 |
+<table>
+  <tr><th>时间</th><th>里程碑</th><th>产出</th></tr>
+  <tr><td>上午</td><td>HTML/CSS/JS 基础</td><td>静态个人介绍页</td></tr>
+  <tr><td>中午</td><td>Node.js 运行环境</td><td>第一个命令行程序</td></tr>
+  <tr><td>下午</td><td>Express + 模板引擎</td><td>动态学术网站（数据驱动）</td></tr>
+  <tr><td>晚上</td><td>部署上线</td><td>公网可访问的个人网站</td></tr>
+</table>
 
 > **给科研小白的建议**
 >
