@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liuxinlllx.github.io</id>
     <title>Xin Liu's Blog</title>
-    <updated>2026-05-21T06:20:00.789Z</updated>
+    <updated>2026-05-21T06:55:59.200Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>Xin Liu</name>
@@ -42,6 +42,262 @@
         <category label="学术随笔"/>
         <category label="体育人文"/>
         <category label="研究感悟"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[科研小白一天学会做个人学术网站]]></title>
+        <id>https://liuxinlllx.github.io/blog/learn-web-dev-day</id>
+        <link href="https://liuxinlllx.github.io/blog/learn-web-dev-day"/>
+        <updated>2026-05-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[从双击打开 HTML 到拥有动态学术网站，我花了一天。完整记录从零搭建个人学术网站的学习路径，所有代码可直接复制使用。]]></summary>
+        <content type="html"><![CDATA[从"只会双击打开 HTML"到"拥有自己的动态学术网站"，我花了一天。作为一名科研小白，我之前对网站的理解仅限于"浏览器能打开一个文件"。今天，我决定给自己一个挑战：**用一天时间，从零开始搭建一个个人学术网站**。最终，我真的做到了。这篇文章会完整记录我的学习路径——所有代码都可以直接复制使用，不需要任何编程基础。
+
+## 上午：理解"网页到底是什么"
+
+### 8:00 - 9:00 重新认识三个字母：HTML、CSS、JS
+
+我一直以为做网页需要学一门很复杂的语言。其实，网页就三样东西：
+
+- **HTML**：房子的框架（标题、段落、图片的位置）
+- **CSS**：装修（颜色、字体、布局）
+- **JavaScript**：开关（点击按钮、弹出提示、动态更新内容）
+
+我做了一个小实验：新建一个 `test.html`，用记事本写了几行代码，双击用浏览器打开——我的第一个"网页"诞生了！虽然丑，但我明白了：**HTML 就是带尖括号的文本，浏览器负责把它渲染成漂亮的页面**。
+
+### 9:00 - 10:00 加上 CSS，让页面变好看
+
+我学了一点点 CSS，把页面加上字体、边框和背景颜色。刷新浏览器——页面变专业了。我意识到：**不需要美术天赋，几行 CSS 就能让学术网站看起来很正经**。
+
+### 10:00 - 11:00 加上 JavaScript，让页面"动起来"
+
+我想让点击"显示更多"按钮时，额外显示一段研究介绍。于是学了最简单的 JavaScript 函数。一上午，我掌握了静态网页的全部基础。但这样的网站有一个问题——**每次更新论文列表，都要手动改 HTML 文件**。我需要一个更智能的方式。
+
+## 中午：认识 Node.js —— 让 JavaScript 跑到服务器上
+
+### 11:30 - 12:30 Node.js 是什么？
+
+我以前以为 JavaScript 只能在浏览器里运行。Node.js 打破了这个限制——它让我可以在电脑上直接运行 JS 文件，读取文件、监听网络请求。我做了第一个 Node.js 程序：新建 `hello.js`，写入 `console.log("Hello")`，然后在终端输入 `node hello.js`，看到了输出。**原来我早就安装了 Node.js**，只是从来没用过。
+
+### 13:00 - 14:00 用 Node.js 创建一个最简单的服务器
+
+我照着教程写了 10 行代码，在终端运行，然后打开浏览器访问 `http://localhost:3000`——看到了响应。这是我第一次让 JavaScript 当"后台"。虽然它只是返回了一行文字，但我明白了：网页可以不是静态文件，而是由程序实时生成的。
+
+### 14:00 - 15:00 遇到端口占用的错误，学会了解决
+
+运行第二次时，报错 `EADDRINUSE`。原来之前的服务器没关。按 Ctrl+C 终止就好了。**每一个错误都是学习机会**——现在我知道端口是什么了。
+
+## 下午：用 Express 框架，10 分钟搭出动态网站
+
+### 15:00 - 16:00 Express 让代码减少 60%
+
+原生 Node.js 写起来太啰嗦。我安装了 Express，写了一个 `app.js`，返回包含当前时间的动态 HTML。**动态网页！**每次刷新，时间都会更新。这让我意识到：学术网站也可以动态显示最新论文、引用次数、会议截止日等实时信息。
+
+### 16:00 - 17:00 把静态文件也交给 Express
+
+我创建了一个 `public` 文件夹，把 `style.css` 放进去，然后代码中加一行 `app.use(express.static('public'))`。这样浏览器访问 `/style.css` 就能自动拿到文件。**再也不用手动处理文件读取了**。
+
+### 17:00 - 18:00 最终成果：一个完整的个人学术网站
+
+我把一天学到的东西整合起来，做了一个真正能用的**个人学术网站**，包含：主页（介绍、照片）、研究兴趣列表、论文列表（带链接）、联系表单。完整代码见下方（可直接复制使用）。
+
+## 晚上：部署上线，让全世界看到
+
+我用 **Railway**（免费，无需信用卡）一键部署：把项目文件夹上传到 GitHub，在 Railway.app 中新建项目，选择 Deploy from GitHub repo，它会自动识别 Node.js，生成一个 `*.up.railway.app` 的网址。我的学术网站现在全球可访问了！
+
+## 完整代码（复制即用）
+
+下面的代码是一个完整的学术网站（基于 Express + EJS），你可以按照注释一步步操作。把代码保存成文件，在电脑上运行 `node app.js` 就能看到效果。
+
+### 项目结构
+
+```
+my_academic_site/
+├── public/
+│   ├── profile.jpg      （放一张你的照片）
+│   └── style.css
+├── views/
+│   └── index.ejs
+├── package.json
+└── app.js
+```
+
+### 1. 初始化并安装依赖
+
+```bash
+mkdir my_academic_site && cd my_academic_site
+npm init -y
+npm install express ejs
+```
+
+### 2. app.js（服务器代码）
+
+```javascript
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+
+const papers = [
+    { title: "深度学习在图像识别中的应用", venue: "CVPR 2024", link: "#" },
+    { title: "基于图神经网络的推荐系统", venue: "KDD 2024", link: "#" }
+];
+
+app.get('/', (req, res) => {
+    res.render('index', {
+        name: "张三",
+        title: "博士研究生",
+        institution: "XX大学计算机学院",
+        interests: ["机器学习", "计算机视觉", "数据挖掘"],
+        papers: papers
+    });
+});
+
+app.post('/contact', (req, res) => {
+    console.log(req.body);
+    res.send('<h1>收到留言，我会尽快回复！</h1><a href="/">返回首页</a>');
+});
+
+app.listen(port, () => {
+    console.log(`学术网站运行在 http://localhost:${port}`);
+});
+```
+
+### 3. views/index.ejs（页面模板）
+
+```ejs
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%= name %> - 个人学术主页</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="/profile.jpg" alt="头像" class="avatar">
+            <h1><%= name %></h1>
+            <p class="title"><%= title %></p>
+            <p class="institution"><%= institution %></p>
+        </header>
+
+        <section>
+            <h2>研究兴趣</h2>
+            <ul>
+                <% interests.forEach(i => { %>
+                    <li><%= i %></li>
+                <% }); %>
+            </ul>
+        </section>
+
+        <section>
+            <h2>代表性论文</h2>
+            <% papers.forEach(p => { %>
+                <div class="paper">
+                    <strong><%= p.title %></strong><br>
+                    <em><%= p.venue %></em>
+                    <a href="<%= p.link %>">[PDF]</a>
+                </div>
+            <% }); %>
+        </section>
+
+        <section>
+            <h2>联系我</h2>
+            <form method="POST" action="/contact">
+                <input type="email" name="email" placeholder="您的邮箱" required>
+                <textarea name="message" placeholder="留言内容" rows="4"></textarea>
+                <button type="submit">发送</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>© 2025 <%= name %></p>
+        </footer>
+    </div>
+</body>
+</html>
+```
+
+### 4. public/style.css（样式）
+
+```css
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+h1 { color: #2c3e50; }
+.title { color: #3498db; font-weight: bold; }
+section {
+    margin: 30px 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+.paper {
+    background: #f1f5f9;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+```
+
+### 5. 运行命令
+
+```bash
+node app.js
+```
+
+打开浏览器访问 `http://localhost:3000` 即可看到你的学术网站。把头像换成你自己的照片，修改论文列表和基本信息，一个专业的个人主页就完成啦！
+
+## 总结：一天究竟学到了什么？
+
+| 时间 | 里程碑 | 产出 |
+|------|--------|------|
+| 上午 | HTML/CSS/JS 基础 | 静态个人介绍页 |
+| 中午 | Node.js 运行环境 | 第一个命令行程序 |
+| 下午 | Express + 模板引擎 | 动态学术网站（数据驱动） |
+| 晚上 | 部署上线 | 公网可访问的个人网站 |
+
+> **给科研小白的建议**
+>
+> - 不要怕代码：我们不需要成为程序员，只需复制粘贴，替换成你的名字、论文即可。
+> - 分步验证：每写几行就保存、刷新浏览器，看到效果会给你巨大信心。
+> - 善用模板：EJS 让你把数据（论文列表）和界面分离，以后更新论文只需修改一个数组。
+> - 下一步：可以给网站加上 RSS 订阅、Google Scholar 自动同步、留言板数据库等功能。]]></content>
+        <category label="学习笔记"/>
+        <category label="Web开发"/>
+        <category label="Node.js"/>
+        <category label="Express"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[体育公园建设：政策回顾与前瞻]]></title>
