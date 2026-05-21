@@ -8,12 +8,14 @@ import type { BlogPost } from "@/lib/types";
 import styles from "./page.module.css";
 
 interface PostContentProps {
-  post: BlogPost;
+  zhPost: BlogPost;
+  enPost?: BlogPost;
 }
 
-export function PostContent({ post }: PostContentProps) {
+export function PostContent({ zhPost, enPost }: PostContentProps) {
   const t = useT();
   const { lang } = useLanguage();
+  const post = lang === "en" && enPost ? enPost : zhPost;
 
   return (
     <>
@@ -30,7 +32,7 @@ export function PostContent({ post }: PostContentProps) {
         </div>
         <div className={styles.meta}>
           <time>{formatDate(post.date, lang)}</time>
-          <span>·</span>
+          <span>&middot;</span>
           <span>{t.blog.readingTime(post.readingTimeMin)}</span>
         </div>
       </header>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useT } from "@/lib/i18n/context";
+import { useLanguage } from "@/lib/i18n/context";
 import { BlogCard } from "@/components/blog/BlogCard";
 import type { BlogPost } from "@/lib/types";
 import styles from "./page.module.css";
@@ -10,7 +10,18 @@ interface BlogContentProps {
 }
 
 export function BlogContent({ posts }: BlogContentProps) {
-  const t = useT();
+  const { t, lang } = useLanguage();
+
+  // Group by slug, prefer current language, fallback to other
+  const slugMap = new Map<string, BlogPost>();
+  for (const post of posts) {
+    if (!slugMap.has(post.slug)) {
+      slugMap.set(post.slug, post);
+    } else if (post.lang === lang) {
+      slugMap.set(post.slug, post);
+    }
+  }
+  const filtered = Array.from(slugMap.values());
 
   return (
     <div className={styles.container}>
@@ -20,11 +31,11 @@ export function BlogContent({ posts }: BlogContentProps) {
           <p className={styles.description}>{t.blog.description}</p>
         </div>
 
-        {posts.length === 0 ? (
+        {filtered.length === 0 ? (
           <p className={styles.empty}>{t.common.noContent}</p>
         ) : (
           <div className={styles.list}>
-            {posts.map((post) => (
+            {filtered.map((post) => (
               <BlogCard key={post.slug} post={post} />
             ))}
           </div>

@@ -1,9 +1,474 @@
 1:"$Sreact.fragment"
-2:I[26469,["/_next/static/chunks/016y26_q~75c4.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/07qr-rz_5r15h.js"],"BlogContent"]
-8:I[97367,["/_next/static/chunks/016y26_q~75c4.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
-9:"$Sreact.suspense"
+2:I[26469,["/_next/static/chunks/016y26_q~75c4.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0r8fo~pz~_7ry.js"],"BlogContent"]
+e:I[97367,["/_next/static/chunks/016y26_q~75c4.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+f:"$Sreact.suspense"
 :HL["/_next/static/chunks/0j4zw5o7l6cee.css","style"]
-3:T267c,<div class="blog-post-body">
+3:T2855,<div class="blog-post-body">
+<div class="container">
+
+# How a Research Newbie Built an Academic Website in One Day
+
+<div class="meta">Date: 2026.05.20 &nbsp;|&nbsp; Author: A research newbie starting from scratch &nbsp;|&nbsp; ~2,300 words</div>
+
+From "I only know how to double-click an HTML file" to "I have my own dynamic academic website" — all in one day. As a research beginner, my previous understanding of websites was limited to "a browser can open a file." Today, I decided to challenge myself: **build a personal academic website from scratch in a single day**. And I actually did it. This post documents my complete learning journey — all code can be copied and used directly, no programming background required.
+
+## Morning: Understanding What a Webpage Actually Is
+
+### 8:00 - 9:00 Rediscovering Three Letters: HTML, CSS, JS
+
+I always thought making a webpage required learning a very complex language. In reality, a webpage is just three things:
+
+- **HTML**: The frame of a house (positions of titles, paragraphs, images)
+- **CSS**: The decoration (colors, fonts, layout)
+- **JavaScript**: The switches (clicking buttons, showing alerts, dynamically updating content)
+
+I did a small experiment: created a `test.html` file, wrote a few lines of code in Notepad, double-clicked to open in a browser — my first "webpage" was born! It was ugly, but I understood: **HTML is just text with angle brackets, and the browser renders it into a beautiful page**.
+
+### 9:00 - 10:00 Adding CSS to Make It Look Good
+
+I learned a bit of CSS, adding fonts, borders, and background colors to the page. Refreshed the browser — the page looked professional. I realized: **no artistic talent needed, a few lines of CSS can make an academic website look serious**.
+
+### 10:00 - 11:00 Adding JavaScript to Make It Interactive
+
+I wanted a "Show More" button that would reveal an additional research introduction. So I learned the simplest JavaScript function. By noon, I had mastered all the basics of static webpages. But such a site has one problem — **every time you update your publication list, you have to manually edit the HTML file**. I needed a smarter approach.
+
+## Midday: Meeting Node.js — Bringing JavaScript to the Server
+
+### 11:30 - 12:30 What is Node.js?
+
+I used to think JavaScript could only run in a browser. Node.js breaks that limitation — it lets me run JS files directly on my computer, reading files and listening for network requests. I wrote my first Node.js program: created `hello.js`, wrote `console.log("Hello")`, then typed `node hello.js` in the terminal and saw the output. **Turns out I already had Node.js installed**, I'd just never used it.
+
+### 13:00 - 14:00 Creating a Simple Server with Node.js
+
+I followed a tutorial and wrote 10 lines of code, ran it in the terminal, then opened my browser to `http://localhost:3000` — and saw a response. This was my first time making JavaScript act as a "backend." Although it only returned a line of text, I understood: webpages don't have to be static files; they can be generated dynamically by a program.
+
+### 14:00 - 15:00 Encountering a Port Conflict Error and Learning to Fix It
+
+On my second run, I got an `EADDRINUSE` error. Turns out the previous server hadn't been stopped. Press Ctrl+C to terminate. **Every error is a learning opportunity** — now I know what a port is.
+
+## Afternoon: Using Express — Building a Dynamic Site in 10 Minutes
+
+### 15:00 - 16:00 Express Reduces Code by 60%
+
+Raw Node.js is too verbose to write. I installed Express, wrote an `app.js`, and returned dynamic HTML containing the current time. **A dynamic webpage!** Every refresh, the time updates. This made me realize: an academic website can also dynamically display the latest papers, citation counts, conference deadlines, and other real-time information.
+
+### 16:00 - 17:00 Letting Express Handle Static Files Too
+
+I created a `public` folder, put `style.css` inside, and added one line: `app.use(express.static('public'))`. Now visiting `/style.css` in the browser automatically serves the file. **No more manual file reading**.
+
+### 17:00 - 18:00 Final Result: A Complete Personal Academic Website
+
+I integrated everything I learned throughout the day and built a genuinely usable **personal academic website**, including: homepage (introduction, photo), research interests list, publication list (with links), and contact form. Complete code below (can be copied and used directly).
+
+## Evening: Deploying Online for the World to See
+
+I used **Railway** (free, no credit card required) for one-click deployment: uploaded the project folder to GitHub, created a new project on Railway.app, selected "Deploy from GitHub repo" — it automatically detected Node.js and generated a `*.up.railway.app` URL. My academic website is now globally accessible!
+
+## Complete Code (Copy and Use)
+
+The code below is a complete academic website (based on Express + EJS). Follow the comments step by step. Save the code as files, run `node app.js` on your computer, and you'll see the result.
+
+### Project Structure
+
+```
+my_academic_site/
+├── public/
+│   ├── profile.jpg      (put a photo of yourself)
+│   └── style.css
+├── views/
+│   └── index.ejs
+├── package.json
+└── app.js
+```
+
+### 1. Initialize and Install Dependencies
+
+```bash
+mkdir my_academic_site && cd my_academic_site
+npm init -y
+npm install express ejs
+```
+
+### 2. app.js (Server Code)
+
+```javascript
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+
+const papers = [
+    { title: "Deep Learning in Image Recognition", venue: "CVPR 2024", link: "#" },
+    { title: "Graph Neural Networks for Recommendation Systems", venue: "KDD 2024", link: "#" }
+];
+
+app.get('/', (req, res) => {
+    res.render('index', {
+        name: "Zhang San",
+        title: "PhD Candidate",
+        institution: "School of Computer Science, XX University",
+        interests: ["Machine Learning", "Computer Vision", "Data Mining"],
+        papers: papers
+    });
+});
+
+app.post('/contact', (req, res) => {
+    console.log(req.body);
+    res.send('<h1>Message received, I will reply soon!</h1><a href="/">Back to Home</a>');
+});
+
+app.listen(port, () => {
+    console.log(`Academic site running at http://localhost:${port}`);
+});
+```
+
+### 3. views/index.ejs (Page Template)
+
+```ejs
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%= name %> - Personal Academic Homepage</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="/profile.jpg" alt="Avatar" class="avatar">
+            <h1><%= name %></h1>
+            <p class="title"><%= title %></p>
+            <p class="institution"><%= institution %></p>
+        </header>
+
+        <section>
+            <h2>Research Interests</h2>
+            <ul>
+                <% interests.forEach(i => { %>
+                    <li><%= i %></li>
+                <% }); %>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Selected Publications</h2>
+            <% papers.forEach(p => { %>
+                <div class="paper">
+                    <strong><%= p.title %></strong><br>
+                    <em><%= p.venue %></em>
+                    <a href="<%= p.link %>">[PDF]</a>
+                </div>
+            <% }); %>
+        </section>
+
+        <section>
+            <h2>Contact Me</h2>
+            <form method="POST" action="/contact">
+                <input type="email" name="email" placeholder="Your email" required>
+                <textarea name="message" placeholder="Your message" rows="4"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 <%= name %></p>
+        </footer>
+    </div>
+</body>
+</html>
+```
+
+### 4. public/style.css (Styles)
+
+```css
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+h1 { color: #2c3e50; }
+.title { color: #3498db; font-weight: bold; }
+section {
+    margin: 30px 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+.paper {
+    background: #f1f5f9;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+```
+
+### 5. Run Command
+
+```bash
+node app.js
+```
+
+Open your browser and visit `http://localhost:3000` to see your academic website. Swap in your own photo, update the publication list and basic info — a professional personal homepage is ready!
+
+## Summary: What Did I Learn in One Day?
+
+<table>
+  <tr><th>Time</th><th>Milestone</th><th>Output</th></tr>
+  <tr><td>Morning</td><td>HTML/CSS/JS basics</td><td>Static personal introduction page</td></tr>
+  <tr><td>Midday</td><td>Node.js runtime</td><td>First command-line program</td></tr>
+  <tr><td>Afternoon</td><td>Express + template engine</td><td>Dynamic academic website (data-driven)</td></tr>
+  <tr><td>Evening</td><td>Deployment</td><td>Publicly accessible personal website</td></tr>
+</table>
+
+> **Advice for Research Beginners**
+>
+> - Don't be afraid of code: you don't need to be a programmer — just copy, paste, and replace with your name and papers.
+> - Verify step by step: save and refresh your browser every few lines. Seeing results will give you tremendous confidence.
+> - Use templates wisely: EJS separates your data (publication list) from the interface. Future updates only require modifying one array.
+> - Next steps: add RSS subscriptions, Google Scholar auto-sync, a guestbook database, and more.
+
+<div class="footer-note">&copy; 2026 A research newbie starting from scratch — You can learn to build a website in one day too</div>
+
+</div>
+</div>4:T25de,
+
+How a Research Newbie Built an Academic Website in One Day
+Date: 2026.05.20  |  Author: A research newbie starting from scratch  |  ~2,300 words
+From "I only know how to double-click an HTML file" to "I have my own dynamic academic website" — all in one day. As a research beginner, my previous understanding of websites was limited to "a browser can open a file." Today, I decided to challenge myself: build a personal academic website from scratch in a single day. And I actually did it. This post documents my complete learning journey — all code can be copied and used directly, no programming background required.
+Morning: Understanding What a Webpage Actually Is
+8:00 - 9:00 Rediscovering Three Letters: HTML, CSS, JS
+I always thought making a webpage required learning a very complex language. In reality, a webpage is just three things:
+
+HTML: The frame of a house (positions of titles, paragraphs, images)
+CSS: The decoration (colors, fonts, layout)
+JavaScript: The switches (clicking buttons, showing alerts, dynamically updating content)
+
+I did a small experiment: created a test.html file, wrote a few lines of code in Notepad, double-clicked to open in a browser — my first "webpage" was born! It was ugly, but I understood: HTML is just text with angle brackets, and the browser renders it into a beautiful page.
+9:00 - 10:00 Adding CSS to Make It Look Good
+I learned a bit of CSS, adding fonts, borders, and background colors to the page. Refreshed the browser — the page looked professional. I realized: no artistic talent needed, a few lines of CSS can make an academic website look serious.
+10:00 - 11:00 Adding JavaScript to Make It Interactive
+I wanted a "Show More" button that would reveal an additional research introduction. So I learned the simplest JavaScript function. By noon, I had mastered all the basics of static webpages. But such a site has one problem — every time you update your publication list, you have to manually edit the HTML file. I needed a smarter approach.
+Midday: Meeting Node.js — Bringing JavaScript to the Server
+11:30 - 12:30 What is Node.js?
+I used to think JavaScript could only run in a browser. Node.js breaks that limitation — it lets me run JS files directly on my computer, reading files and listening for network requests. I wrote my first Node.js program: created hello.js, wrote console.log("Hello"), then typed node hello.js in the terminal and saw the output. Turns out I already had Node.js installed, I'd just never used it.
+13:00 - 14:00 Creating a Simple Server with Node.js
+I followed a tutorial and wrote 10 lines of code, ran it in the terminal, then opened my browser to http://localhost:3000 — and saw a response. This was my first time making JavaScript act as a "backend." Although it only returned a line of text, I understood: webpages don't have to be static files; they can be generated dynamically by a program.
+14:00 - 15:00 Encountering a Port Conflict Error and Learning to Fix It
+On my second run, I got an EADDRINUSE error. Turns out the previous server hadn't been stopped. Press Ctrl+C to terminate. Every error is a learning opportunity — now I know what a port is.
+Afternoon: Using Express — Building a Dynamic Site in 10 Minutes
+15:00 - 16:00 Express Reduces Code by 60%
+Raw Node.js is too verbose to write. I installed Express, wrote an app.js, and returned dynamic HTML containing the current time. A dynamic webpage! Every refresh, the time updates. This made me realize: an academic website can also dynamically display the latest papers, citation counts, conference deadlines, and other real-time information.
+16:00 - 17:00 Letting Express Handle Static Files Too
+I created a public folder, put style.css inside, and added one line: app.use(express.static('public')). Now visiting /style.css in the browser automatically serves the file. No more manual file reading.
+17:00 - 18:00 Final Result: A Complete Personal Academic Website
+I integrated everything I learned throughout the day and built a genuinely usable personal academic website, including: homepage (introduction, photo), research interests list, publication list (with links), and contact form. Complete code below (can be copied and used directly).
+Evening: Deploying Online for the World to See
+I used Railway (free, no credit card required) for one-click deployment: uploaded the project folder to GitHub, created a new project on Railway.app, selected "Deploy from GitHub repo" — it automatically detected Node.js and generated a *.up.railway.app URL. My academic website is now globally accessible!
+Complete Code (Copy and Use)
+The code below is a complete academic website (based on Express + EJS). Follow the comments step by step. Save the code as files, run node app.js on your computer, and you'll see the result.
+Project Structure
+my_academic_site/
+├── public/
+│   ├── profile.jpg      (put a photo of yourself)
+│   └── style.css
+├── views/
+│   └── index.ejs
+├── package.json
+└── app.js
+
+1. Initialize and Install Dependencies
+mkdir my_academic_site && cd my_academic_site
+npm init -y
+npm install express ejs
+
+2. app.js (Server Code)
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+
+const papers = [
+    { title: "Deep Learning in Image Recognition", venue: "CVPR 2024", link: "#" },
+    { title: "Graph Neural Networks for Recommendation Systems", venue: "KDD 2024", link: "#" }
+];
+
+app.get('/', (req, res) => {
+    res.render('index', {
+        name: "Zhang San",
+        title: "PhD Candidate",
+        institution: "School of Computer Science, XX University",
+        interests: ["Machine Learning", "Computer Vision", "Data Mining"],
+        papers: papers
+    });
+});
+
+app.post('/contact', (req, res) => {
+    console.log(req.body);
+    res.send('<h1>Message received, I will reply soon!</h1><a href="/">Back to Home</a>');
+});
+
+app.listen(port, () => {
+    console.log(`Academic site running at http://localhost:${port}`);
+});
+
+3. views/index.ejs (Page Template)
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%= name %> - Personal Academic Homepage</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="/profile.jpg" alt="Avatar" class="avatar">
+            <h1><%= name %></h1>
+            <p class="title"><%= title %></p>
+            <p class="institution"><%= institution %></p>
+        </header>
+
+        <section>
+            <h2>Research Interests</h2>
+            <ul>
+                <% interests.forEach(i => { %>
+                    <li><%= i %></li>
+                <% }); %>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Selected Publications</h2>
+            <% papers.forEach(p => { %>
+                <div class="paper">
+                    <strong><%= p.title %></strong><br>
+                    <em><%= p.venue %></em>
+                    <a href="<%= p.link %>">[PDF]</a>
+                </div>
+            <% }); %>
+        </section>
+
+        <section>
+            <h2>Contact Me</h2>
+            <form method="POST" action="/contact">
+                <input type="email" name="email" placeholder="Your email" required>
+                <textarea name="message" placeholder="Your message" rows="4"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 <%= name %></p>
+        </footer>
+    </div>
+</body>
+</html>
+
+4. public/style.css (Styles)
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+h1 { color: #2c3e50; }
+.title { color: #3498db; font-weight: bold; }
+section {
+    margin: 30px 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+.paper {
+    background: #f1f5f9;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+5. Run Command
+node app.js
+
+Open your browser and visit http://localhost:3000 to see your academic website. Swap in your own photo, update the publication list and basic info — a professional personal homepage is ready!
+Summary: What Did I Learn in One Day?
+
+  TimeMilestoneOutput
+  MorningHTML/CSS/JS basicsStatic personal introduction page
+  MiddayNode.js runtimeFirst command-line program
+  AfternoonExpress + template engineDynamic academic website (data-driven)
+  EveningDeploymentPublicly accessible personal website
+
+
+Advice for Research Beginners
+
+Don't be afraid of code: you don't need to be a programmer — just copy, paste, and replace with your name and papers.
+Verify step by step: save and refresh your browser every few lines. Seeing results will give you tremendous confidence.
+Use templates wisely: EJS separates your data (publication list) from the interface. Future updates only require modifying one array.
+Next steps: add RSS subscriptions, Google Scholar auto-sync, a guestbook database, and more.
+
+
+© 2026 A research newbie starting from scratch — You can learn to build a website in one day too
+
+5:T267c,<div class="blog-post-body">
 <div class="container">
 
 # 科研小白一天学会做个人学术网站
@@ -260,7 +725,7 @@ node app.js
 <div class="footer-note">© 2026 一个从零开始的科研新手 — 一天也能学会做网站</div>
 
 </div>
-</div>4:T240d,
+</div>6:T240d,
 
 科研小白一天学会做个人学术网站
 📅 学习日期：2026.05.20  |  ✍️ 作者：一个从零开始的科研新手  |  ⏱ 全文约 2300 字
@@ -468,8 +933,74 @@ node app.js
 
 © 2026 一个从零开始的科研新手 — 一天也能学会做网站
 
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"posts":[{"title":"科研小白一天学会做个人学术网站","date":"2026-05-20T00:00:00.000Z","tags":["学习笔记","Web开发","Node.js","Express"],"excerpt":"从双击打开 HTML 到拥有动态学术网站，我花了一天。完整记录从零搭建个人学术网站的学习路径，所有代码可直接复制使用。","metadata":{"readingTime":5,"wordCount":1262.2},"slug":"learn-web-dev-day","body":"$3","plain":"$4","readingTimeMin":3},{"title":"从经济学到体育人文：我的学术转型之路","date":"2025-05-10T00:00:00.000Z","tags":["学术随笔","体育人文","研究感悟"],"excerpt":"从金融到经济学再到体育人文社会学，这篇随笔记录了我的跨学科学术旅程与思考。","metadata":{"readingTime":1,"wordCount":246.96000000000004},"slug":"hello-world","body":"## 为什么选择体育人文社会学？\n\n从华南理工大学金融学本科，到苏黎世大学经济学硕士，再到浙江大学体育人文社会学博士——这条学术路径在旁人看来可能有些跳跃。但对我而言，每一步都是水到渠成的。\n\n在清华大学五道口金融学院体育金融研究中心工作的五年里，我逐渐意识到：**体育不仅仅是产业**。它是一个社会议题，关乎每个人的健康福祉，关乎社会治理的创新，关乎\"健康中国\"战略的落地。\n\n## 体卫融合：一个值得深耕的领域\n\n\"体卫融合\"——即体育运动与医疗卫生的深度融合——是我目前研究的核心议题。\n\n传统的医疗体系重在\"治已病\"，而体育运动的独特价值在于\"治未病\"。如何将运动处方纳入公共卫生体系？如何量化体育参与的健康收益？如何设计激励机制让更多人主动参与体育锻炼？\n\n这些问题既是学术命题，也是政策难题。它们没有现成的答案，只能在研究中逐步探索。\n\n## 跨学科背景的独特价值\n\n我的经济学训练让我习惯于用成本-收益分析框架看待问题，而体育人文社会学的视角则提醒我不能忽略制度、文化和个体体验。\n\n这种跨学科的训练帮助我在做体育消费研究时，既能跑回归分析，也能理解消费行为背后的文化逻辑。\n\n期待在未来的研究中，能把这两条线索编织得更加紧密。","plain":"为什么选择体育人文社会学？\n从华南理工大学金融学本科，到苏黎世大学经济学硕士，再到浙江大学体育人文社会学博士——这条学术路径在旁人看来可能有些跳跃。但对我而言，每一步都是水到渠成的。\n在清华大学五道口金融学院体育金融研究中心工作的五年里，我逐渐意识到：体育不仅仅是产业。它是一个社会议题，关乎每个人的健康福祉，关乎社会治理的创新，关乎\"健康中国\"战略的落地。\n体卫融合：一个值得深耕的领域\n\"体卫融合\"——即体育运动与医疗卫生的深度融合——是我目前研究的核心议题。\n传统的医疗体系重在\"治已病\"，而体育运动的独特价值在于\"治未病\"。如何将运动处方纳入公共卫生体系？如何量化体育参与的健康收益？如何设计激励机制让更多人主动参与体育锻炼？\n这些问题既是学术命题，也是政策难题。它们没有现成的答案，只能在研究中逐步探索。\n跨学科背景的独特价值\n我的经济学训练让我习惯于用成本-收益分析框架看待问题，而体育人文社会学的视角则提醒我不能忽略制度、文化和个体体验。\n这种跨学科的训练帮助我在做体育消费研究时，既能跑回归分析，也能理解消费行为背后的文化逻辑。\n期待在未来的研究中，能把这两条线索编织得更加紧密。","readingTimeMin":1},{"title":"体育公园建设：政策回顾与前瞻","date":"2025-04-22T00:00:00.000Z","tags":["体育政策","体育公园","全民健身"],"excerpt":"回顾近年来中国体育公园建设政策的发展脉络，分析当前面临的挑战与未来方向。","metadata":{"readingTime":1,"wordCount":261.52000000000004},"slug":"sports-park-policy","body":"## 政策背景\n\n2021年，国家发展改革委等七部门联合印发《关于推进体育公园建设的指导意见》，明确提出到2025年全国新建或改扩建1000个左右体育公园的目标。\n\n这一政策的出台并非偶然。随着全民健身上升为国家战略，体育场地设施的供给不足日益成为制约因素。传统的体育场馆往往\"高大上\"有余而\"接地气\"不足，难以满足普通市民日常健身需求。\n\n## 全国调研的发现\n\n在清华大学体育金融研究中心工作期间，我参与组织了全国体育公园调研。调研覆盖了东中西部多个省市，我们看到了许多值得关注的趋势：\n\n1. **绿色与体育的融合**：最好的体育公园不一定是设施最奢华的，而是那些将运动空间与自然景观巧妙结合的。\n2. **多功能复合需求**：除了传统的跑步、篮球、足球场地，市民对儿童游乐、老年健身、智慧步道的需求日益强烈。\n3. **运营模式亟待创新**：建设容易运维难，如何建立可持续的运营模式是关键挑战。\n\n## 政策建议\n\n基于调研发现，我撰写的政策解读《推进体育公园建设 满足全民健身需求》被国家发展改革委采纳并刊登在官方网站。\n\n核心建议包括：加强部门协同（体育、发改、住建、自然资源）、建立多元化投入机制、制定分层次的建设标准、完善运营考核体系。\n\n## 展望\n\n体育公园建设是一个长期工程。从\"有没有\"到\"好不好\"的升级，需要政策制定者、研究者、运营者的持续对话与协作。","plain":"政策背景\n2021年，国家发展改革委等七部门联合印发《关于推进体育公园建设的指导意见》，明确提出到2025年全国新建或改扩建1000个左右体育公园的目标。\n这一政策的出台并非偶然。随着全民健身上升为国家战略，体育场地设施的供给不足日益成为制约因素。传统的体育场馆往往\"高大上\"有余而\"接地气\"不足，难以满足普通市民日常健身需求。\n全国调研的发现\n在清华大学体育金融研究中心工作期间，我参与组织了全国体育公园调研。调研覆盖了东中西部多个省市，我们看到了许多值得关注的趋势：\n\n绿色与体育的融合：最好的体育公园不一定是设施最奢华的，而是那些将运动空间与自然景观巧妙结合的。\n多功能复合需求：除了传统的跑步、篮球、足球场地，市民对儿童游乐、老年健身、智慧步道的需求日益强烈。\n运营模式亟待创新：建设容易运维难，如何建立可持续的运营模式是关键挑战。\n\n政策建议\n基于调研发现，我撰写的政策解读《推进体育公园建设 满足全民健身需求》被国家发展改革委采纳并刊登在官方网站。\n核心建议包括：加强部门协同（体育、发改、住建、自然资源）、建立多元化投入机制、制定分层次的建设标准、完善运营考核体系。\n展望\n体育公园建设是一个长期工程。从\"有没有\"到\"好不好\"的升级，需要政策制定者、研究者、运营者的持续对话与协作。","readingTimeMin":1}]}],["$L5","$L6"],"$L7"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"XX1cFeENA8OJ-BboAO1nN"}
-5:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0j4zw5o7l6cee.css","precedence":"next"}]
-6:["$","script","script-0",{"src":"/_next/static/chunks/07qr-rz_5r15h.js","async":true}]
-7:["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]
-a:null
+7:T7ae,## Why Sports Humanities and Sociology?
+
+From a finance undergraduate degree at South China University of Technology, to a master's in economics at the University of Zurich, to a PhD in Sports Humanities and Sociology at Zhejiang University — this academic path may seem unconventional to outsiders. But for me, every step was a natural progression.
+
+During my five years at the Sports Finance Research Center of Tsinghua PBC School of Finance, I gradually came to realize: **sport is more than an industry**. It is a social issue — one that touches on everyone's health and well-being, on innovations in social governance, and on the implementation of the "Healthy China" national strategy.
+
+## Exercise is Medicine: A Field Worth Digging Into
+
+"Exercise is Medicine" — the deep integration of physical activity and healthcare — is the core focus of my current research.
+
+Traditional healthcare systems prioritize treating existing illnesses, while the unique value of sports and exercise lies in prevention. How can exercise prescriptions be incorporated into public health systems? How do we quantify the health benefits of sports participation? How can incentive mechanisms be designed to encourage more people to be physically active?
+
+These questions are both academic problems and policy challenges. They have no ready-made answers — they can only be explored step by step through research.
+
+## The Unique Value of an Interdisciplinary Background
+
+My training in economics has taught me to analyze problems through a cost-benefit framework, while the perspective of sports humanities and sociology reminds me not to overlook institutions, culture, and individual experience.
+
+This interdisciplinary training helps me, when conducting sports consumption research, to both run regression analyses and understand the cultural logic behind consumption behavior.
+
+I look forward to weaving these two threads even more tightly together in future research.8:T797,Why Sports Humanities and Sociology?
+From a finance undergraduate degree at South China University of Technology, to a master's in economics at the University of Zurich, to a PhD in Sports Humanities and Sociology at Zhejiang University — this academic path may seem unconventional to outsiders. But for me, every step was a natural progression.
+During my five years at the Sports Finance Research Center of Tsinghua PBC School of Finance, I gradually came to realize: sport is more than an industry. It is a social issue — one that touches on everyone's health and well-being, on innovations in social governance, and on the implementation of the "Healthy China" national strategy.
+Exercise is Medicine: A Field Worth Digging Into
+"Exercise is Medicine" — the deep integration of physical activity and healthcare — is the core focus of my current research.
+Traditional healthcare systems prioritize treating existing illnesses, while the unique value of sports and exercise lies in prevention. How can exercise prescriptions be incorporated into public health systems? How do we quantify the health benefits of sports participation? How can incentive mechanisms be designed to encourage more people to be physically active?
+These questions are both academic problems and policy challenges. They have no ready-made answers — they can only be explored step by step through research.
+The Unique Value of an Interdisciplinary Background
+My training in economics has taught me to analyze problems through a cost-benefit framework, while the perspective of sports humanities and sociology reminds me not to overlook institutions, culture, and individual experience.
+This interdisciplinary training helps me, when conducting sports consumption research, to both run regression analyses and understand the cultural logic behind consumption behavior.
+I look forward to weaving these two threads even more tightly together in future research.9:T8c5,## Policy Background
+
+In 2021, seven government agencies including the National Development and Reform Commission (NDRC) jointly issued the *Guiding Opinions on Promoting Sports Park Construction*, setting a clear target of building or renovating approximately 1,000 sports parks nationwide by 2025.
+
+This policy did not emerge in a vacuum. As "National Fitness" became a national strategy, the insufficient supply of sports facilities increasingly became a bottleneck. Traditional sports venues often lean toward large-scale, high-end facilities that fail to meet the day-to-day fitness needs of ordinary citizens.
+
+## Findings from the National Survey
+
+During my time at the Sports Finance Research Center at Tsinghua University, I helped organize a nationwide survey of sports parks. The survey covered multiple provinces and cities across eastern, central, and western China. We observed several noteworthy trends:
+
+1. **Integrating Green Space with Sports**: The best sports parks are not necessarily those with the most luxurious facilities, but those that skillfully blend exercise spaces with natural landscapes.
+2. **Multi-functional and Compound Needs**: Beyond traditional running tracks, basketball courts, and soccer fields, citizens increasingly demand children's play areas, senior fitness zones, and smart walking trails.
+3. **Operating Models Need Urgent Innovation**: Building is easy; sustaining operations is hard. Establishing a viable long-term operating model is the key challenge.
+
+## Policy Recommendations
+
+Based on our survey findings, I authored a policy brief titled *Promoting Sports Park Construction to Meet National Fitness Needs*, which was adopted by the NDRC and published on its official website.
+
+Core recommendations include: strengthening inter-agency coordination (sports, development and reform, housing and construction, natural resources), establishing diversified investment mechanisms, developing tiered construction standards, and improving operational evaluation systems.
+
+## Looking Ahead
+
+Sports park construction is a long-term endeavor. Upgrading from "having them at all" to "having them done well" requires sustained dialogue and collaboration among policymakers, researchers, and operators.a:T898,Policy Background
+In 2021, seven government agencies including the National Development and Reform Commission (NDRC) jointly issued the Guiding Opinions on Promoting Sports Park Construction, setting a clear target of building or renovating approximately 1,000 sports parks nationwide by 2025.
+This policy did not emerge in a vacuum. As "National Fitness" became a national strategy, the insufficient supply of sports facilities increasingly became a bottleneck. Traditional sports venues often lean toward large-scale, high-end facilities that fail to meet the day-to-day fitness needs of ordinary citizens.
+Findings from the National Survey
+During my time at the Sports Finance Research Center at Tsinghua University, I helped organize a nationwide survey of sports parks. The survey covered multiple provinces and cities across eastern, central, and western China. We observed several noteworthy trends:
+
+Integrating Green Space with Sports: The best sports parks are not necessarily those with the most luxurious facilities, but those that skillfully blend exercise spaces with natural landscapes.
+Multi-functional and Compound Needs: Beyond traditional running tracks, basketball courts, and soccer fields, citizens increasingly demand children's play areas, senior fitness zones, and smart walking trails.
+Operating Models Need Urgent Innovation: Building is easy; sustaining operations is hard. Establishing a viable long-term operating model is the key challenge.
+
+Policy Recommendations
+Based on our survey findings, I authored a policy brief titled Promoting Sports Park Construction to Meet National Fitness Needs, which was adopted by the NDRC and published on its official website.
+Core recommendations include: strengthening inter-agency coordination (sports, development and reform, housing and construction, natural resources), establishing diversified investment mechanisms, developing tiered construction standards, and improving operational evaluation systems.
+Looking Ahead
+Sports park construction is a long-term endeavor. Upgrading from "having them at all" to "having them done well" requires sustained dialogue and collaboration among policymakers, researchers, and operators.0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"posts":[{"title":"How a Research Newbie Built an Academic Website in One Day","date":"2026-05-20T00:00:00.000Z","tags":["Learning Notes","Web Development","Node.js","Express"],"excerpt":"From double-clicking HTML files to having a dynamic academic website, all in one day. A complete record of the learning path from zero to a personal academic site — all code is ready to copy and use.","metadata":{"readingTime":5,"wordCount":1335},"lang":"en","slug":"learn-web-dev-day","body":"$3","plain":"$4","readingTimeMin":6},{"title":"科研小白一天学会做个人学术网站","date":"2026-05-20T00:00:00.000Z","tags":["学习笔记","Web开发","Node.js","Express"],"excerpt":"从双击打开 HTML 到拥有动态学术网站，我花了一天。完整记录从零搭建个人学术网站的学习路径，所有代码可直接复制使用。","metadata":{"readingTime":5,"wordCount":1262.2},"lang":"zh","slug":"learn-web-dev-day","body":"$5","plain":"$6","readingTimeMin":3},{"title":"From Economics to Sports Humanities: My Academic Transition","date":"2025-05-10T00:00:00.000Z","tags":["Academic Essays","Sports Humanities","Research Reflections"],"excerpt":"From finance to economics to sports humanities and sociology — this essay traces my interdisciplinary academic journey and reflections.","metadata":{"readingTime":1,"wordCount":292},"lang":"en","slug":"hello-world","body":"$7","plain":"$8","readingTimeMin":2},{"title":"从经济学到体育人文：我的学术转型之路","date":"2025-05-10T00:00:00.000Z","tags":["学术随笔","体育人文","研究感悟"],"excerpt":"从金融到经济学再到体育人文社会学，这篇随笔记录了我的跨学科学术旅程与思考。","metadata":{"readingTime":1,"wordCount":246.96000000000004},"lang":"zh","slug":"hello-world","body":"## 为什么选择体育人文社会学？\n\n从华南理工大学金融学本科，到苏黎世大学经济学硕士，再到浙江大学体育人文社会学博士——这条学术路径在旁人看来可能有些跳跃。但对我而言，每一步都是水到渠成的。\n\n在清华大学五道口金融学院体育金融研究中心工作的五年里，我逐渐意识到：**体育不仅仅是产业**。它是一个社会议题，关乎每个人的健康福祉，关乎社会治理的创新，关乎\"健康中国\"战略的落地。\n\n## 体卫融合：一个值得深耕的领域\n\n\"体卫融合\"——即体育运动与医疗卫生的深度融合——是我目前研究的核心议题。\n\n传统的医疗体系重在\"治已病\"，而体育运动的独特价值在于\"治未病\"。如何将运动处方纳入公共卫生体系？如何量化体育参与的健康收益？如何设计激励机制让更多人主动参与体育锻炼？\n\n这些问题既是学术命题，也是政策难题。它们没有现成的答案，只能在研究中逐步探索。\n\n## 跨学科背景的独特价值\n\n我的经济学训练让我习惯于用成本-收益分析框架看待问题，而体育人文社会学的视角则提醒我不能忽略制度、文化和个体体验。\n\n这种跨学科的训练帮助我在做体育消费研究时，既能跑回归分析，也能理解消费行为背后的文化逻辑。\n\n期待在未来的研究中，能把这两条线索编织得更加紧密。","plain":"为什么选择体育人文社会学？\n从华南理工大学金融学本科，到苏黎世大学经济学硕士，再到浙江大学体育人文社会学博士——这条学术路径在旁人看来可能有些跳跃。但对我而言，每一步都是水到渠成的。\n在清华大学五道口金融学院体育金融研究中心工作的五年里，我逐渐意识到：体育不仅仅是产业。它是一个社会议题，关乎每个人的健康福祉，关乎社会治理的创新，关乎\"健康中国\"战略的落地。\n体卫融合：一个值得深耕的领域\n\"体卫融合\"——即体育运动与医疗卫生的深度融合——是我目前研究的核心议题。\n传统的医疗体系重在\"治已病\"，而体育运动的独特价值在于\"治未病\"。如何将运动处方纳入公共卫生体系？如何量化体育参与的健康收益？如何设计激励机制让更多人主动参与体育锻炼？\n这些问题既是学术命题，也是政策难题。它们没有现成的答案，只能在研究中逐步探索。\n跨学科背景的独特价值\n我的经济学训练让我习惯于用成本-收益分析框架看待问题，而体育人文社会学的视角则提醒我不能忽略制度、文化和个体体验。\n这种跨学科的训练帮助我在做体育消费研究时，既能跑回归分析，也能理解消费行为背后的文化逻辑。\n期待在未来的研究中，能把这两条线索编织得更加紧密。","readingTimeMin":1},{"title":"Sports Park Development: Policy Review and Outlook","date":"2025-04-22T00:00:00.000Z","tags":["Sports Policy","Sports Parks","National Fitness"],"excerpt":"A review of the policy evolution of sports park construction in China, analyzing current challenges and future directions.","metadata":{"readingTime":1,"wordCount":302},"lang":"en","slug":"sports-park-policy","body":"$9","plain":"$a","readingTimeMin":2},{"title":"体育公园建设：政策回顾与前瞻","date":"2025-04-22T00:00:00.000Z","tags":["体育政策","体育公园","全民健身"],"excerpt":"回顾近年来中国体育公园建设政策的发展脉络，分析当前面临的挑战与未来方向。","metadata":{"readingTime":1,"wordCount":261.52000000000004},"lang":"zh","slug":"sports-park-policy","body":"## 政策背景\n\n2021年，国家发展改革委等七部门联合印发《关于推进体育公园建设的指导意见》，明确提出到2025年全国新建或改扩建1000个左右体育公园的目标。\n\n这一政策的出台并非偶然。随着全民健身上升为国家战略，体育场地设施的供给不足日益成为制约因素。传统的体育场馆往往\"高大上\"有余而\"接地气\"不足，难以满足普通市民日常健身需求。\n\n## 全国调研的发现\n\n在清华大学体育金融研究中心工作期间，我参与组织了全国体育公园调研。调研覆盖了东中西部多个省市，我们看到了许多值得关注的趋势：\n\n1. **绿色与体育的融合**：最好的体育公园不一定是设施最奢华的，而是那些将运动空间与自然景观巧妙结合的。\n2. **多功能复合需求**：除了传统的跑步、篮球、足球场地，市民对儿童游乐、老年健身、智慧步道的需求日益强烈。\n3. **运营模式亟待创新**：建设容易运维难，如何建立可持续的运营模式是关键挑战。\n\n## 政策建议\n\n基于调研发现，我撰写的政策解读《推进体育公园建设 满足全民健身需求》被国家发展改革委采纳并刊登在官方网站。\n\n核心建议包括：加强部门协同（体育、发改、住建、自然资源）、建立多元化投入机制、制定分层次的建设标准、完善运营考核体系。\n\n## 展望\n\n体育公园建设是一个长期工程。从\"有没有\"到\"好不好\"的升级，需要政策制定者、研究者、运营者的持续对话与协作。","plain":"政策背景\n2021年，国家发展改革委等七部门联合印发《关于推进体育公园建设的指导意见》，明确提出到2025年全国新建或改扩建1000个左右体育公园的目标。\n这一政策的出台并非偶然。随着全民健身上升为国家战略，体育场地设施的供给不足日益成为制约因素。传统的体育场馆往往\"高大上\"有余而\"接地气\"不足，难以满足普通市民日常健身需求。\n全国调研的发现\n在清华大学体育金融研究中心工作期间，我参与组织了全国体育公园调研。调研覆盖了东中西部多个省市，我们看到了许多值得关注的趋势：\n\n绿色与体育的融合：最好的体育公园不一定是设施最奢华的，而是那些将运动空间与自然景观巧妙结合的。\n多功能复合需求：除了传统的跑步、篮球、足球场地，市民对儿童游乐、老年健身、智慧步道的需求日益强烈。\n运营模式亟待创新：建设容易运维难，如何建立可持续的运营模式是关键挑战。\n\n政策建议\n基于调研发现，我撰写的政策解读《推进体育公园建设 满足全民健身需求》被国家发展改革委采纳并刊登在官方网站。\n核心建议包括：加强部门协同（体育、发改、住建、自然资源）、建立多元化投入机制、制定分层次的建设标准、完善运营考核体系。\n展望\n体育公园建设是一个长期工程。从\"有没有\"到\"好不好\"的升级，需要政策制定者、研究者、运营者的持续对话与协作。","readingTimeMin":1}]}],["$Lb","$Lc"],"$Ld"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"QiXPahpKNSLhKmiYBQWw3"}
+b:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0j4zw5o7l6cee.css","precedence":"next"}]
+c:["$","script","script-0",{"src":"/_next/static/chunks/0r8fo~pz~_7ry.js","async":true}]
+d:["$","$Le",null,{"children":["$","$f",null,{"name":"Next.MetadataOutlet","children":"$@10"}]}]
+10:null

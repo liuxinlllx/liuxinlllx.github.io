@@ -1,6 +1,6 @@
 "use client";
 
-import { useT } from "@/lib/i18n/context";
+import { useLanguage } from "@/lib/i18n/context";
 import { PodcastCard } from "@/components/podcast/PodcastCard";
 import type { PodcastEpisode } from "@/lib/types";
 import styles from "./page.module.css";
@@ -10,7 +10,18 @@ interface PodcastContentProps {
 }
 
 export function PodcastContent({ episodes }: PodcastContentProps) {
-  const t = useT();
+  const { t, lang } = useLanguage();
+
+  // Group by slug, prefer current language, fallback to other
+  const slugMap = new Map<string, PodcastEpisode>();
+  for (const ep of episodes) {
+    if (!slugMap.has(ep.slug)) {
+      slugMap.set(ep.slug, ep);
+    } else if (ep.lang === lang) {
+      slugMap.set(ep.slug, ep);
+    }
+  }
+  const filtered = Array.from(slugMap.values());
 
   return (
     <div className={styles.container}>
@@ -20,11 +31,11 @@ export function PodcastContent({ episodes }: PodcastContentProps) {
           <p className={styles.description}>{t.podcast.description}</p>
         </div>
 
-        {episodes.length === 0 ? (
+        {filtered.length === 0 ? (
           <p className={styles.empty}>{t.common.noContent}</p>
         ) : (
           <div className={styles.list}>
-            {episodes.map((ep) => (
+            {filtered.map((ep) => (
               <PodcastCard key={ep.slug} episode={ep} />
             ))}
           </div>

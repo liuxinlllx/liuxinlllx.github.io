@@ -1,5 +1,6 @@
 export interface BlogPost {
   slug: string;
+  lang: "zh" | "en";
   title: string;
   date: string;
   tags: string[];
@@ -11,6 +12,7 @@ export interface BlogPost {
 
 export interface PodcastEpisode {
   slug: string;
+  lang: "zh" | "en";
   title: string;
   date: string;
   duration: string;

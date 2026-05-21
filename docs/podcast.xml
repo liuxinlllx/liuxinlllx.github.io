@@ -4,11 +4,46 @@
         <title>体育人文对话 — Xin Liu's Podcast</title>
         <link>https://liuxinlllx.github.io</link>
         <description>体育人文与学术对话 — Sports humanities and academic conversations</description>
-        <lastBuildDate>Thu, 21 May 2026 07:59:44 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 21 May 2026 08:21:56 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh-CN</language>
         <copyright>All rights reserved 2026, Xin Liu</copyright>
+        <item>
+            <title><![CDATA[Exercise is Medicine: From Concept to Practice — How Far Have We Come?]]></title>
+            <link>https://liuxinlllx.github.io/podcast/tiyu-renwen-01</link>
+            <guid isPermaLink="false">https://liuxinlllx.github.io/podcast/tiyu-renwen-01</guid>
+            <pubDate>Thu, 01 May 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[The first podcast episode explores the policy trajectory and practical progress of Exercise is Medicine, sharing observations from sports industry expos and academic conferences.]]></description>
+            <content:encoded><![CDATA[## About This Episode
+
+"Exercise is Medicine" is repeatedly mentioned in policy documents — but how far has it actually progressed in practice? In this episode, I draw on my own research experience to discuss the origins and evolution of this concept, as well as innovative practices emerging across China.
+
+## Key Topics
+
+### Policy Timeline
+- 2016: The *"Healthy China 2030" Planning Outline* first incorporated "sport-medicine integration" into a national-level policy document
+- 2021: The *National Fitness Plan (2021–2025)* further emphasized "Exercise is Medicine"
+- In the upcoming 15th Five-Year Plan, Exercise is Medicine is expected to play an even more prominent role
+
+### Local Practice Cases
+Zhejiang, Shanghai, Shenzhen, and other regions have begun piloting models that combine "exercise prescription" with community health management. Zhejiang's approach is particularly noteworthy — community health centers issue exercise prescriptions, and certified social sports instructors follow up on their implementation.
+
+### Core Challenges
+- Doctors don't understand exercise, and sports professionals don't understand medicine — how do we break down these professional silos?
+- The payment question: who pays for exercise prescriptions? Can health insurance cover them?
+- Standardization: what counts as a "qualified" exercise prescription?
+
+### My Reflections
+Exercise is Medicine is not purely a sports issue — it is a social governance challenge. It requires cross-departmental coordination among health commissions, sports bureaus, and education departments. The researcher's mission is to provide quantifiable evidence that can drive policy innovation.
+
+## How to Listen
+
+This episode is available on the Ximalaya platform — search for "Sports Humanities Dialogue" to listen.
+
+> The audio file is a placeholder. Please place the actual audio in the `public/audio/` directory.]]></content:encoded>
+            <enclosure url="https://liuxinlllx.github.io/audio/tiyu-renwen-01.mp3" length="0" type="audio/mp3"/>
+        </item>
         <item>
             <title><![CDATA[体卫融合：从理念到实践，我们走了多远？]]></title>
             <link>https://liuxinlllx.github.io/podcast/tiyu-renwen-01</link>

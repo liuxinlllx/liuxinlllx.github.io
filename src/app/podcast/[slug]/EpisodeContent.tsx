@@ -8,12 +8,14 @@ import type { PodcastEpisode } from "@/lib/types";
 import styles from "./page.module.css";
 
 interface EpisodeContentProps {
-  episode: PodcastEpisode;
+  zhEpisode: PodcastEpisode;
+  enEpisode?: PodcastEpisode;
 }
 
-export function EpisodeContent({ episode }: EpisodeContentProps) {
+export function EpisodeContent({ zhEpisode, enEpisode }: EpisodeContentProps) {
   const t = useT();
   const { lang } = useLanguage();
+  const episode = lang === "en" && enEpisode ? enEpisode : zhEpisode;
 
   return (
     <>
@@ -30,7 +32,7 @@ export function EpisodeContent({ episode }: EpisodeContentProps) {
         </div>
         <div className={styles.meta}>
           <time>{formatDate(episode.date, lang)}</time>
-          <span>·</span>
+          <span>&middot;</span>
           <span>
             {t.podcast.duration}: {episode.duration}
           </span>

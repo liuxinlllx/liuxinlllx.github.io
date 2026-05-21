@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { mdxComponents } from "@/mdx/components";
 import { EpisodeContent } from "./EpisodeContent";
+import { BilingualBody } from "@/components/shared/BilingualBody";
 import { AudioPlayer } from "@/components/podcast/AudioPlayer";
 import type { Metadata } from "next";
 import styles from "./page.module.css";
@@ -12,7 +13,8 @@ interface PageParams {
 }
 
 export function generateStaticParams(): PageParams[] {
-  return podcast.map((ep) => ({ slug: ep.slug }));
+  const slugs = [...new Set(podcast.map((ep) => ep.slug))];
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -35,19 +37,33 @@ export default async function PodcastEpisodePage({
   params: Promise<PageParams>;
 }) {
   const { slug } = await params;
-  const ep = podcast.find((p) => p.slug === slug);
+  const zhEp = podcast.find((p) => p.slug === slug && p.lang === "zh");
+  const enEp = podcast.find((p) => p.slug === slug && p.lang === "en");
 
-  if (!ep) {
+  if (!zhEp && !enEp) {
     notFound();
   }
+
+  const episode = zhEp || enEp;
 
   return (
     <div className={styles.container}>
       <article className={styles.article}>
-        <EpisodeContent episode={ep} />
-        <AudioPlayer src={ep.audioUrl} title={ep.title} />
+        <EpisodeContent zhEpisode={zhEp!} enEpisode={enEp} />
+        <AudioPlayer src={episode!.audioUrl} title={episode!.title} />
         <div className={styles.content}>
-          <MDXRemote source={ep.body} components={mdxComponents} />
+          <BilingualBody
+            zhContent={
+              zhEp ? (
+                <MDXRemote source={zhEp.body} components={mdxComponents} />
+              ) : null
+            }
+            enContent={
+              enEp ? (
+                <MDXRemote source={enEp.body} components={mdxComponents} />
+              ) : null
+            }
+          />
         </div>
       </article>
     </div>

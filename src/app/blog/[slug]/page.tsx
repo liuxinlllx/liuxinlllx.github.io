@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { mdxComponents } from "@/mdx/components";
 import { PostContent } from "./PostContent";
+import { BilingualBody } from "@/components/shared/BilingualBody";
 import type { Metadata } from "next";
 import styles from "./page.module.css";
 
@@ -11,7 +12,8 @@ interface PageParams {
 }
 
 export function generateStaticParams(): PageParams[] {
-  return blog.map((post) => ({ slug: post.slug }));
+  const slugs = [...new Set(blog.map((post) => post.slug))];
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -34,18 +36,30 @@ export default async function BlogPostPage({
   params: Promise<PageParams>;
 }) {
   const { slug } = await params;
-  const post = blog.find((p) => p.slug === slug);
+  const zhPost = blog.find((p) => p.slug === slug && p.lang === "zh");
+  const enPost = blog.find((p) => p.slug === slug && p.lang === "en");
 
-  if (!post) {
+  if (!zhPost && !enPost) {
     notFound();
   }
 
   return (
     <div className={styles.container}>
       <article className={styles.article}>
-        <PostContent post={post} />
+        <PostContent zhPost={zhPost!} enPost={enPost} />
         <div className={styles.content}>
-          <MDXRemote source={post.body} components={mdxComponents} />
+          <BilingualBody
+            zhContent={
+              zhPost ? (
+                <MDXRemote source={zhPost.body} components={mdxComponents} />
+              ) : null
+            }
+            enContent={
+              enPost ? (
+                <MDXRemote source={enPost.body} components={mdxComponents} />
+              ) : null
+            }
+          />
         </div>
       </article>
     </div>

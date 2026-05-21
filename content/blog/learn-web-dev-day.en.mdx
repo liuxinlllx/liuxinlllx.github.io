@@ -1,0 +1,265 @@
+---
+title: "How a Research Newbie Built an Academic Website in One Day"
+date: 2026-05-20
+tags: ["Learning Notes", "Web Development", "Node.js", "Express"]
+excerpt: "From double-clicking HTML files to having a dynamic academic website, all in one day. A complete record of the learning path from zero to a personal academic site — all code is ready to copy and use."
+---
+
+<div class="blog-post-body">
+<div class="container">
+
+# How a Research Newbie Built an Academic Website in One Day
+
+<div class="meta">Date: 2026.05.20 &nbsp;|&nbsp; Author: A research newbie starting from scratch &nbsp;|&nbsp; ~2,300 words</div>
+
+From "I only know how to double-click an HTML file" to "I have my own dynamic academic website" — all in one day. As a research beginner, my previous understanding of websites was limited to "a browser can open a file." Today, I decided to challenge myself: **build a personal academic website from scratch in a single day**. And I actually did it. This post documents my complete learning journey — all code can be copied and used directly, no programming background required.
+
+## Morning: Understanding What a Webpage Actually Is
+
+### 8:00 - 9:00 Rediscovering Three Letters: HTML, CSS, JS
+
+I always thought making a webpage required learning a very complex language. In reality, a webpage is just three things:
+
+- **HTML**: The frame of a house (positions of titles, paragraphs, images)
+- **CSS**: The decoration (colors, fonts, layout)
+- **JavaScript**: The switches (clicking buttons, showing alerts, dynamically updating content)
+
+I did a small experiment: created a `test.html` file, wrote a few lines of code in Notepad, double-clicked to open in a browser — my first "webpage" was born! It was ugly, but I understood: **HTML is just text with angle brackets, and the browser renders it into a beautiful page**.
+
+### 9:00 - 10:00 Adding CSS to Make It Look Good
+
+I learned a bit of CSS, adding fonts, borders, and background colors to the page. Refreshed the browser — the page looked professional. I realized: **no artistic talent needed, a few lines of CSS can make an academic website look serious**.
+
+### 10:00 - 11:00 Adding JavaScript to Make It Interactive
+
+I wanted a "Show More" button that would reveal an additional research introduction. So I learned the simplest JavaScript function. By noon, I had mastered all the basics of static webpages. But such a site has one problem — **every time you update your publication list, you have to manually edit the HTML file**. I needed a smarter approach.
+
+## Midday: Meeting Node.js — Bringing JavaScript to the Server
+
+### 11:30 - 12:30 What is Node.js?
+
+I used to think JavaScript could only run in a browser. Node.js breaks that limitation — it lets me run JS files directly on my computer, reading files and listening for network requests. I wrote my first Node.js program: created `hello.js`, wrote `console.log("Hello")`, then typed `node hello.js` in the terminal and saw the output. **Turns out I already had Node.js installed**, I'd just never used it.
+
+### 13:00 - 14:00 Creating a Simple Server with Node.js
+
+I followed a tutorial and wrote 10 lines of code, ran it in the terminal, then opened my browser to `http://localhost:3000` — and saw a response. This was my first time making JavaScript act as a "backend." Although it only returned a line of text, I understood: webpages don't have to be static files; they can be generated dynamically by a program.
+
+### 14:00 - 15:00 Encountering a Port Conflict Error and Learning to Fix It
+
+On my second run, I got an `EADDRINUSE` error. Turns out the previous server hadn't been stopped. Press Ctrl+C to terminate. **Every error is a learning opportunity** — now I know what a port is.
+
+## Afternoon: Using Express — Building a Dynamic Site in 10 Minutes
+
+### 15:00 - 16:00 Express Reduces Code by 60%
+
+Raw Node.js is too verbose to write. I installed Express, wrote an `app.js`, and returned dynamic HTML containing the current time. **A dynamic webpage!** Every refresh, the time updates. This made me realize: an academic website can also dynamically display the latest papers, citation counts, conference deadlines, and other real-time information.
+
+### 16:00 - 17:00 Letting Express Handle Static Files Too
+
+I created a `public` folder, put `style.css` inside, and added one line: `app.use(express.static('public'))`. Now visiting `/style.css` in the browser automatically serves the file. **No more manual file reading**.
+
+### 17:00 - 18:00 Final Result: A Complete Personal Academic Website
+
+I integrated everything I learned throughout the day and built a genuinely usable **personal academic website**, including: homepage (introduction, photo), research interests list, publication list (with links), and contact form. Complete code below (can be copied and used directly).
+
+## Evening: Deploying Online for the World to See
+
+I used **Railway** (free, no credit card required) for one-click deployment: uploaded the project folder to GitHub, created a new project on Railway.app, selected "Deploy from GitHub repo" — it automatically detected Node.js and generated a `*.up.railway.app` URL. My academic website is now globally accessible!
+
+## Complete Code (Copy and Use)
+
+The code below is a complete academic website (based on Express + EJS). Follow the comments step by step. Save the code as files, run `node app.js` on your computer, and you'll see the result.
+
+### Project Structure
+
+```
+my_academic_site/
+├── public/
+│   ├── profile.jpg      (put a photo of yourself)
+│   └── style.css
+├── views/
+│   └── index.ejs
+├── package.json
+└── app.js
+```
+
+### 1. Initialize and Install Dependencies
+
+```bash
+mkdir my_academic_site && cd my_academic_site
+npm init -y
+npm install express ejs
+```
+
+### 2. app.js (Server Code)
+
+```javascript
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+
+const papers = [
+    { title: "Deep Learning in Image Recognition", venue: "CVPR 2024", link: "#" },
+    { title: "Graph Neural Networks for Recommendation Systems", venue: "KDD 2024", link: "#" }
+];
+
+app.get('/', (req, res) => {
+    res.render('index', {
+        name: "Zhang San",
+        title: "PhD Candidate",
+        institution: "School of Computer Science, XX University",
+        interests: ["Machine Learning", "Computer Vision", "Data Mining"],
+        papers: papers
+    });
+});
+
+app.post('/contact', (req, res) => {
+    console.log(req.body);
+    res.send('<h1>Message received, I will reply soon!</h1><a href="/">Back to Home</a>');
+});
+
+app.listen(port, () => {
+    console.log(`Academic site running at http://localhost:${port}`);
+});
+```
+
+### 3. views/index.ejs (Page Template)
+
+```ejs
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%= name %> - Personal Academic Homepage</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="/profile.jpg" alt="Avatar" class="avatar">
+            <h1><%= name %></h1>
+            <p class="title"><%= title %></p>
+            <p class="institution"><%= institution %></p>
+        </header>
+
+        <section>
+            <h2>Research Interests</h2>
+            <ul>
+                <% interests.forEach(i => { %>
+                    <li><%= i %></li>
+                <% }); %>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Selected Publications</h2>
+            <% papers.forEach(p => { %>
+                <div class="paper">
+                    <strong><%= p.title %></strong><br>
+                    <em><%= p.venue %></em>
+                    <a href="<%= p.link %>">[PDF]</a>
+                </div>
+            <% }); %>
+        </section>
+
+        <section>
+            <h2>Contact Me</h2>
+            <form method="POST" action="/contact">
+                <input type="email" name="email" placeholder="Your email" required>
+                <textarea name="message" placeholder="Your message" rows="4"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 <%= name %></p>
+        </footer>
+    </div>
+</body>
+</html>
+```
+
+### 4. public/style.css (Styles)
+
+```css
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+h1 { color: #2c3e50; }
+.title { color: #3498db; font-weight: bold; }
+section {
+    margin: 30px 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+.paper {
+    background: #f1f5f9;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+```
+
+### 5. Run Command
+
+```bash
+node app.js
+```
+
+Open your browser and visit `http://localhost:3000` to see your academic website. Swap in your own photo, update the publication list and basic info — a professional personal homepage is ready!
+
+## Summary: What Did I Learn in One Day?
+
+<table>
+  <tr><th>Time</th><th>Milestone</th><th>Output</th></tr>
+  <tr><td>Morning</td><td>HTML/CSS/JS basics</td><td>Static personal introduction page</td></tr>
+  <tr><td>Midday</td><td>Node.js runtime</td><td>First command-line program</td></tr>
+  <tr><td>Afternoon</td><td>Express + template engine</td><td>Dynamic academic website (data-driven)</td></tr>
+  <tr><td>Evening</td><td>Deployment</td><td>Publicly accessible personal website</td></tr>
+</table>
+
+> **Advice for Research Beginners**
+>
+> - Don't be afraid of code: you don't need to be a programmer — just copy, paste, and replace with your name and papers.
+> - Verify step by step: save and refresh your browser every few lines. Seeing results will give you tremendous confidence.
+> - Use templates wisely: EJS separates your data (publication list) from the interface. Future updates only require modifying one array.
+> - Next steps: add RSS subscriptions, Google Scholar auto-sync, a guestbook database, and more.
+
+<div class="footer-note">&copy; 2026 A research newbie starting from scratch — You can learn to build a website in one day too</div>
+
+</div>
+</div>
