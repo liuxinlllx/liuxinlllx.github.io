@@ -4,11 +4,18 @@
 4:I[37457,["/_next/static/chunks/0hdhjewkla9s-.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
 5:I[12397,["/_next/static/chunks/0hdhjewkla9s-.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/05y6pmtt2hzfh.js"],"BlogCard"]
 f:I[68027,["/_next/static/chunks/0hdhjewkla9s-.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default",1]
-:HL["/_next/static/chunks/0rc6w_4bpc1e5.css","style"]
+:HL["/_next/static/chunks/0866afwyja6u_.css","style"]
 :HL["/_next/static/chunks/0j4zw5o7l6cee.css","style"]
-6:T245f,从"只会双击打开 HTML"到"拥有自己的动态学术网站"，我花了一天。作为一名科研小白，我之前对网站的理解仅限于"浏览器能打开一个文件"。今天，我决定给自己一个挑战：**用一天时间，从零开始搭建一个个人学术网站**。最终，我真的做到了。这篇文章会完整记录我的学习路径——所有代码都可以直接复制使用，不需要任何编程基础。
+6:T25f8,<div class="blog-post-body">
+<div class="container">
 
-## 上午：理解"网页到底是什么"
+# 科研小白一天学会做个人学术网站
+
+<div class="meta">📅 学习日期：2026.05.20 &nbsp;|&nbsp; ✍️ 作者：一个从零开始的科研新手 &nbsp;|&nbsp; ⏱ 全文约 2300 字</div>
+
+从"只会双击打开 HTML"到"拥有自己的动态学术网站"，我花了一天。作为一名科研小白，我之前对网站的理解仅限于"浏览器能打开一个文件"。今天，我决定给自己一个挑战：**用一天时间，从零开始搭建一个个人学术网站**。最终，我真的做到了。这篇文章会完整记录我的学习路径——所有代码都可以直接复制使用，不需要任何编程基础。
+
+## 📘 上午：理解"网页到底是什么"
 
 ### 8:00 - 9:00 重新认识三个字母：HTML、CSS、JS
 
@@ -28,7 +35,7 @@ f:I[68027,["/_next/static/chunks/0hdhjewkla9s-.js","/_next/static/chunks/0d3shmw
 
 我想让点击"显示更多"按钮时，额外显示一段研究介绍。于是学了最简单的 JavaScript 函数。一上午，我掌握了静态网页的全部基础。但这样的网站有一个问题——**每次更新论文列表，都要手动改 HTML 文件**。我需要一个更智能的方式。
 
-## 中午：认识 Node.js —— 让 JavaScript 跑到服务器上
+## ☕ 中午：认识 Node.js —— 让 JavaScript 跑到服务器上
 
 ### 11:30 - 12:30 Node.js 是什么？
 
@@ -42,7 +49,7 @@ f:I[68027,["/_next/static/chunks/0hdhjewkla9s-.js","/_next/static/chunks/0d3shmw
 
 运行第二次时，报错 `EADDRINUSE`。原来之前的服务器没关。按 Ctrl+C 终止就好了。**每一个错误都是学习机会**——现在我知道端口是什么了。
 
-## 下午：用 Express 框架，10 分钟搭出动态网站
+## ⚡ 下午：用 Express 框架，10 分钟搭出动态网站
 
 ### 15:00 - 16:00 Express 让代码减少 60%
 
@@ -56,11 +63,11 @@ f:I[68027,["/_next/static/chunks/0hdhjewkla9s-.js","/_next/static/chunks/0d3shmw
 
 我把一天学到的东西整合起来，做了一个真正能用的**个人学术网站**，包含：主页（介绍、照片）、研究兴趣列表、论文列表（带链接）、联系表单。完整代码见下方（可直接复制使用）。
 
-## 晚上：部署上线，让全世界看到
+## 🌙 晚上：部署上线，让全世界看到
 
 我用 **Railway**（免费，无需信用卡）一键部署：把项目文件夹上传到 GitHub，在 Railway.app 中新建项目，选择 Deploy from GitHub repo，它会自动识别 Node.js，生成一个 `*.up.railway.app` 的网址。我的学术网站现在全球可访问了！
 
-## 完整代码（复制即用）
+## 📦 完整代码（复制即用）
 
 下面的代码是一个完整的学术网站（基于 Express + EJS），你可以按照注释一步步操作。把代码保存成文件，在电脑上运行 `node app.js` 就能看到效果。
 
@@ -236,7 +243,7 @@ node app.js
 
 打开浏览器访问 `http://localhost:3000` 即可看到你的学术网站。把头像换成你自己的照片，修改论文列表和基本信息，一个专业的个人主页就完成啦！
 
-## 总结：一天究竟学到了什么？
+## 📊 总结：一天究竟学到了什么？
 
 | 时间 | 里程碑 | 产出 |
 |------|--------|------|
@@ -250,8 +257,17 @@ node app.js
 > - 不要怕代码：我们不需要成为程序员，只需复制粘贴，替换成你的名字、论文即可。
 > - 分步验证：每写几行就保存、刷新浏览器，看到效果会给你巨大信心。
 > - 善用模板：EJS 让你把数据（论文列表）和界面分离，以后更新论文只需修改一个数组。
-> - 下一步：可以给网站加上 RSS 订阅、Google Scholar 自动同步、留言板数据库等功能。7:T2340,从"只会双击打开 HTML"到"拥有自己的动态学术网站"，我花了一天。作为一名科研小白，我之前对网站的理解仅限于"浏览器能打开一个文件"。今天，我决定给自己一个挑战：用一天时间，从零开始搭建一个个人学术网站。最终，我真的做到了。这篇文章会完整记录我的学习路径——所有代码都可以直接复制使用，不需要任何编程基础。
-上午：理解"网页到底是什么"
+> - 下一步：可以给网站加上 RSS 订阅、Google Scholar 自动同步、留言板数据库等功能。
+
+<div class="footer-note">© 2026 一个从零开始的科研新手 — 一天也能学会做网站</div>
+
+</div>
+</div>7:T244c,
+
+科研小白一天学会做个人学术网站
+📅 学习日期：2026.05.20  |  ✍️ 作者：一个从零开始的科研新手  |  ⏱ 全文约 2300 字
+从"只会双击打开 HTML"到"拥有自己的动态学术网站"，我花了一天。作为一名科研小白，我之前对网站的理解仅限于"浏览器能打开一个文件"。今天，我决定给自己一个挑战：用一天时间，从零开始搭建一个个人学术网站。最终，我真的做到了。这篇文章会完整记录我的学习路径——所有代码都可以直接复制使用，不需要任何编程基础。
+📘 上午：理解"网页到底是什么"
 8:00 - 9:00 重新认识三个字母：HTML、CSS、JS
 我一直以为做网页需要学一门很复杂的语言。其实，网页就三样东西：
 
@@ -264,23 +280,23 @@ JavaScript：开关（点击按钮、弹出提示、动态更新内容）
 我学了一点点 CSS，把页面加上字体、边框和背景颜色。刷新浏览器——页面变专业了。我意识到：不需要美术天赋，几行 CSS 就能让学术网站看起来很正经。
 10:00 - 11:00 加上 JavaScript，让页面"动起来"
 我想让点击"显示更多"按钮时，额外显示一段研究介绍。于是学了最简单的 JavaScript 函数。一上午，我掌握了静态网页的全部基础。但这样的网站有一个问题——每次更新论文列表，都要手动改 HTML 文件。我需要一个更智能的方式。
-中午：认识 Node.js —— 让 JavaScript 跑到服务器上
+☕ 中午：认识 Node.js —— 让 JavaScript 跑到服务器上
 11:30 - 12:30 Node.js 是什么？
 我以前以为 JavaScript 只能在浏览器里运行。Node.js 打破了这个限制——它让我可以在电脑上直接运行 JS 文件，读取文件、监听网络请求。我做了第一个 Node.js 程序：新建 hello.js，写入 console.log("Hello")，然后在终端输入 node hello.js，看到了输出。原来我早就安装了 Node.js，只是从来没用过。
 13:00 - 14:00 用 Node.js 创建一个最简单的服务器
 我照着教程写了 10 行代码，在终端运行，然后打开浏览器访问 http://localhost:3000——看到了响应。这是我第一次让 JavaScript 当"后台"。虽然它只是返回了一行文字，但我明白了：网页可以不是静态文件，而是由程序实时生成的。
 14:00 - 15:00 遇到端口占用的错误，学会了解决
 运行第二次时，报错 EADDRINUSE。原来之前的服务器没关。按 Ctrl+C 终止就好了。每一个错误都是学习机会——现在我知道端口是什么了。
-下午：用 Express 框架，10 分钟搭出动态网站
+⚡ 下午：用 Express 框架，10 分钟搭出动态网站
 15:00 - 16:00 Express 让代码减少 60%
 原生 Node.js 写起来太啰嗦。我安装了 Express，写了一个 app.js，返回包含当前时间的动态 HTML。**动态网页！**每次刷新，时间都会更新。这让我意识到：学术网站也可以动态显示最新论文、引用次数、会议截止日等实时信息。
 16:00 - 17:00 把静态文件也交给 Express
 我创建了一个 public 文件夹，把 style.css 放进去，然后代码中加一行 app.use(express.static('public'))。这样浏览器访问 /style.css 就能自动拿到文件。再也不用手动处理文件读取了。
 17:00 - 18:00 最终成果：一个完整的个人学术网站
 我把一天学到的东西整合起来，做了一个真正能用的个人学术网站，包含：主页（介绍、照片）、研究兴趣列表、论文列表（带链接）、联系表单。完整代码见下方（可直接复制使用）。
-晚上：部署上线，让全世界看到
+🌙 晚上：部署上线，让全世界看到
 我用 Railway（免费，无需信用卡）一键部署：把项目文件夹上传到 GitHub，在 Railway.app 中新建项目，选择 Deploy from GitHub repo，它会自动识别 Node.js，生成一个 *.up.railway.app 的网址。我的学术网站现在全球可访问了！
-完整代码（复制即用）
+📦 完整代码（复制即用）
 下面的代码是一个完整的学术网站（基于 Express + EJS），你可以按照注释一步步操作。把代码保存成文件，在电脑上运行 node app.js 就能看到效果。
 项目结构
 my_academic_site/
@@ -435,7 +451,7 @@ button {
 node app.js
 
 打开浏览器访问 http://localhost:3000 即可看到你的学术网站。把头像换成你自己的照片，修改论文列表和基本信息，一个专业的个人主页就完成啦！
-总结：一天究竟学到了什么？
+📊 总结：一天究竟学到了什么？
 | 时间 | 里程碑 | 产出 |
 |------|--------|------|
 | 上午 | HTML/CSS/JS 基础 | 静态个人介绍页 |
@@ -450,7 +466,10 @@ node app.js
 善用模板：EJS 让你把数据（论文列表）和界面分离，以后更新论文只需修改一个数组。
 下一步：可以给网站加上 RSS 订阅、Google Scholar 自动同步、留言板数据库等功能。
 
-0:{"P":null,"c":["","blog"],"q":"","i":false,"f":[[["",{"children":["blog",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0rc6w_4bpc1e5.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/0hdhjewkla9s-.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/0d3shmwh5_nmn.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh-CN","children":["$","body",null,{"children":["$","$L2",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[["$","div",null,{"className":"page-module__jXZM3G__container","children":["$","section",null,{"className":"page-module__jXZM3G__section","children":[["$","div",null,{"className":"page-module__jXZM3G__header","children":[["$","h1",null,{"className":"page-module__jXZM3G__title","children":"博客"}],["$","p",null,{"className":"page-module__jXZM3G__description","children":"学术思考与研究笔记"}]]}],["$","div",null,{"className":"page-module__jXZM3G__list","children":[["$","$L5","learn-web-dev-day",{"post":{"title":"科研小白一天学会做个人学术网站","date":"2026-05-20T00:00:00.000Z","tags":["学习笔记","Web开发","Node.js","Express"],"excerpt":"从双击打开 HTML 到拥有动态学术网站，我花了一天。完整记录从零搭建个人学术网站的学习路径，所有代码可直接复制使用。","metadata":{"readingTime":5,"wordCount":1230.84},"slug":"learn-web-dev-day","body":"$6","plain":"$7","readingTimeMin":3}}],"$L8","$L9"]}]]}]}],["$La","$Lb"],"$Lc"]}],{},null,false,null]},null,false,"$@d"]},null,false,null],"$Le",false]],"m":"$undefined","G":["$f",["$L10"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"S2ahTB8JQKq_XRrc6KwAe"}
+
+© 2026 一个从零开始的科研新手 — 一天也能学会做网站
+
+0:{"P":null,"c":["","blog"],"q":"","i":false,"f":[[["",{"children":["blog",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0866afwyja6u_.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/0hdhjewkla9s-.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/0d3shmwh5_nmn.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh-CN","children":["$","body",null,{"children":["$","$L2",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[["$","div",null,{"className":"page-module__jXZM3G__container","children":["$","section",null,{"className":"page-module__jXZM3G__section","children":[["$","div",null,{"className":"page-module__jXZM3G__header","children":[["$","h1",null,{"className":"page-module__jXZM3G__title","children":"博客"}],["$","p",null,{"className":"page-module__jXZM3G__description","children":"学术思考与研究笔记"}]]}],["$","div",null,{"className":"page-module__jXZM3G__list","children":[["$","$L5","learn-web-dev-day",{"post":{"title":"科研小白一天学会做个人学术网站","date":"2026-05-20T00:00:00.000Z","tags":["学习笔记","Web开发","Node.js","Express"],"excerpt":"从双击打开 HTML 到拥有动态学术网站，我花了一天。完整记录从零搭建个人学术网站的学习路径，所有代码可直接复制使用。","metadata":{"readingTime":5,"wordCount":1262.2},"slug":"learn-web-dev-day","body":"$6","plain":"$7","readingTimeMin":3}}],"$L8","$L9"]}]]}]}],["$La","$Lb"],"$Lc"]}],{},null,false,null]},null,false,"$@d"]},null,false,null],"$Le",false]],"m":"$undefined","G":["$f",["$L10"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"jQEQDjys3McX3LXB2KaOu"}
 11:I[97367,["/_next/static/chunks/0hdhjewkla9s-.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
 12:"$Sreact.suspense"
 15:I[97367,["/_next/static/chunks/0hdhjewkla9s-.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"ViewportBoundary"]
@@ -463,7 +482,7 @@ c:["$","$L11",null,{"children":["$","$12",null,{"name":"Next.MetadataOutlet","ch
 14:[]
 d:"$W14"
 e:["$","$1","h",{"children":[null,["$","$L15",null,{"children":"$L16"}],["$","div",null,{"hidden":true,"children":["$","$L17",null,{"children":["$","$12",null,{"name":"Next.Metadata","children":"$L18"}]}]}],null]}]
-10:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0rc6w_4bpc1e5.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+10:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0866afwyja6u_.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
 16:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 19:I[27201,["/_next/static/chunks/0hdhjewkla9s-.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"IconMark"]
 13:null
